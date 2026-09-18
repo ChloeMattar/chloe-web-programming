@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block navigation %}
+<nav>
+    <a href="/">Home</a>
+    <a href="/internet-history">History of the Internet</a>
+    <a href="/internet-history-ai">History of the Internet (AI)</a>
+    <a href="/web-history">History of the Web</a>
+    <a href="/web-history-ai">History of the Web (AI) </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+    {% block history_content %}
+    {% endblock %}
+{% endblock %}

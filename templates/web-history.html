@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The history of the Internet</title>
-</head>
-<body>
-    <header> 
-        <h1>The history of the Internet </h1>
-    </header>
-    <nav>
-         <a href="/">Home</a>
-        <a href="/internet-history">History of the Internet</a>
-        <a href="/internet-history-ai">History of the Internet (AI)</a>
-        <a href="/web-history">History of the Web</a>
-        <a href="/web-history-ai">History of the Web (AI) </a>
-    </nav>
-    <main> 
+{% extends "history-base.html" %}
+
+    {% block title %}History of the World Wide Web {% endblock %}
+
+       {% block header %} <h1>History of the World Wide Web </h1> {% endblock %}
+
+        {% block history_content %} 
         <section>
             <h2>What is the World Wide Web?</h2>
             <p>The World Wide Web Opened a new way to access and connect information through linked pages (hyperlinks). Tim Berners-Lee Invented the World Wide Web while at CERN, the European Particle Physics Laboratory, in 1989. He mainly described it as a place where people can share anything, global, local, draft or even highly polished. The Web works hand in hand with the Internet by providing a system of websites and web pages that users can access through web browsers.</p>
@@ -126,9 +114,4 @@
             <a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110 - HTTP Semantics</a><br>
             <a href="https://www.rfc-editor.org/rfc/rfc3986.html">RFC 3986 - Uniform Resource Identifier (URI): Generic Syntax</a><br>
         </section>
-        </main>
-        <footer>
-            <p>This website is created for educational purposes only, as part of the GIN446 — Web Programming course, School of Engineering, USEK.</p>
-        </footer>
-    </body>
-</html>
+        {% endblock %}

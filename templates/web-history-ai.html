@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the World Wide Web</title>
-</head>
-<body>
-    <header>
-        <h1>History of the World Wide Web</h1>
-    </header>
-    <nav>
-         <a href="/">Home</a>
-        <a href="/internet-history">History of the Internet</a>
-        <a href="/internet-history-ai">History of the Internet (AI)</a>
-        <a href="/web-history">History of the Web</a>
-        <a href="/web-history-ai">History of the Web (AI) </a>
-    </nav>
+{% extends "history-base.html" %}
 
-    <main>
+    {% block title %}History of the World Wide Web (AI) {% endblock %}
+
+       {% block header %} <h1>History of the World Wide Web </h1> {% endblock %}
+
+        {% block history_content %}
         <section>
             <h2>What is the World Wide Web?</h2>
             <p>
@@ -189,13 +176,4 @@
             <p><a href="https://www.rfc-editor.org/rfc/rfc9110.html" target="_blank">RFC 9110</a></p>
             <p><a href="https://www.rfc-editor.org/rfc/rfc3986.html" target="_blank">RFC 3986</a></p>
         </section>
-    </main>
-
-    <footer>
-        <p>This website is created for educational purposes only, as part
-of the GIN446 — Web Programming course, School of Engineering,
-USEK.</p>
-    </footer>
-
-</body>
-</html>
+    {% endblock %}
