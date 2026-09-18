@@ -14,9 +14,9 @@ def home():
     weekly_work = [
         {"week": 1, "title": "Live site launched", "url": "/"},
         {"week": 2, "title": "History of the Internet", "url": "/internet-history"},
-        {"week": 2, "title": "History of the Web", "url": "/web-history"},
+        {"week": 2, "title": "History of the World Wide Web", "url": "/web-history"},
         {"week": 2, "title": "History of the Internet (AI)", "url": "/internet-history-ai"},
-        {"week": 2, "title": "History of the Web (AI)", "url": "/web-history-ai"},
+        {"week": 2, "title": "History of the World Wide Web (AI)", "url": "/web-history-ai"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
