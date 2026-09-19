@@ -2,11 +2,11 @@
 
 {% block navigation %}
 <nav>
-    <a href="/">Home</a>
-    <a href="/internet-history">History of the Internet</a>
-    <a href="/internet-history-ai">History of the Internet (AI)</a>
-    <a href="/web-history">History of the World Wide Web</a>
-    <a href="/web-history-ai">History of the World Wide Web (AI)</a>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('internet_history') }}">History of the Internet</a>
+    <a href="{{ url_for('internet_history_ai') }}">History of the Internet (AI)</a>
+    <a href="{{ url_for('web_history') }}">History of the World Wide Web</a>
+    <a href="{{ url_for('web_history_ai') }}">History of the World Wide Web (AI)</a>
 </nav>
 {% endblock %}
 
