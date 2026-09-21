@@ -1,20 +1,43 @@
 {% extends "base.html" %}
+
 {% block title %} Home {% endblock %}
 
 {% block header %}
-        <h1>Web Programming Portfolio — Chloe MATTAR </h1>
-        <p>A live site that grows one page or feature every week.</p>
+    <h1>Web Programming Portfolio - Chloe Mattar</h1>
+    <p>A live site that grows one page or feature every week.</p>
 {% endblock %}
-{% block content%}
-        <section>
-            <h2>Weekly Work</h2>
-            <!-- Each week you add a link here to that week's page or feature. -->
-            <ul>
-                {% for item in weekly_work %}
-                    <li><a href="{{ item.url }}">Week {{ item.week }} — {{ item.title }}</a></li>
-                {% else %}
-                    <li>Week 1 — live site launched.</li>
-                {% endfor %}
-            </ul>
-        </section>
+
+{% block content %}
+    <section>
+        <h2>Weekly Work</h2>
+
+        <!-- Each week you add a link here to that week's page or feature. -->
+        <ul>
+            {% for item in weekly_work %}
+                <li>
+                    <a href="{{ item.url }}">
+
+                        <span class="week-label">
+                            Week {{ item.week }}
+                        </span>
+
+                        <span class="project-title">
+                            {{ item.title }}
+                        </span>
+
+                        <span class="project-image">
+                            <img
+                                src="{{ url_for('static', filename='PIC' ~ loop.index ~ '.png') }}"
+                                alt="{{ item.title }}"
+                            >
+                        </span>
+
+                    </a>
+                </li>
+
+            {% else %}
+                <li>Week 1 — live site launched.</li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}

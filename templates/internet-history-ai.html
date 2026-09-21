@@ -5,7 +5,9 @@
        {% block header %} <h1>History of the Internet </h1> {% endblock %}
 
         {% block history_content %}
-        <section>
+        <section id="introduction">
+                <div class="intro-text">
+
             <h2>What is the Internet?</h2>
             <p>
                 The Internet is a global system of all interconnected computer networks, it allows collaboration and
@@ -13,13 +15,19 @@
                 communication protocols especially TCP/IP. It is one of the most successful revolutions and investments
                 that the World has ever seen.
             </p>
+        </div>
+         <img
+        class="intro-image"
+        src="{{ url_for('static', filename='PIC6.png') }}"
+        alt="World Wide Web illustration" >
         </section>
 
-        <section>
+        <section id="milestones">
             <h2>Milestones of the History of the Internet.</h2>
 
             <article>
-                <h3>The Launch of ARPANET – 1969</h3>
+                <h3>1969</h3>
+                <h4>The Launch of ARPANET</h4>
                 <p>
                     The roots of the modern Internet began with the Advanced Research Projects Agency (ARPA) in
                     the late 1960s. ARPANET was created by ARPA to establish communication between research
@@ -31,7 +39,8 @@
             </article>
 
             <article>
-                <h3>The idea of an Open-Architecture Networking – 1972</h3>
+                <h3>1972</h3>
+                <h4>The idea of an Open-Architecture Networking</h4>
                 <p>
                     Researchers wanted to go beyond simple communication and communicate across different
                     networks instead of connecting through one. This led to the idea of an open architecture
@@ -43,7 +52,8 @@
             </article>
 
             <article>
-                <h3>Earlier Transmission Control Program – 1974</h3>
+                <h3>1974</h3>
+                <h4>Earlier Transmission Control Program</h4>
                 <p>
                     In 1974 RFC 675 specifying the Transmission control program was published by Vint Cerf,
                     Yogen Dalal and Carl Sunshine transforming the internetworking from a simple idea into a
@@ -54,7 +64,8 @@
             </article>
 
             <article>
-                <h3>ARPANET Switches to TCP/IP - 1983</h3>
+                <h3>1983</h3>
+                <h4>ARPANET Switches to TCP/IP</h4>
                 <p>
                     One of the most interesting challenges of ARPANET was switching from NCP to TCP/IP
                     Protocol on January 1, 1983. This transition had been carefully planned by the networking
@@ -66,7 +77,8 @@
             </article>
 
             <article>
-                <h3>Introduction of the Domain Name System (DNS) - 1983</h3>
+                <h3>1983</h3>
+                <h4>Introduction of the Domain Name System (DNS)</h4>
                 <p>
                     In November 1983, the Domain Name System (DNS) was introduced through RFC 882 and RFC
                     883. DNS simplified communication by allowing users to use easy-to-remember domain names
@@ -77,7 +89,8 @@
             </article>
 
             <article>
-                <h3>NSFNET - 1986</h3>
+                <h3>1986</h3>
+                <h4>NSFNET</h4>
                 <p>
                     U.S National Science Foundation launched NSFNET in 1986 which was one of the most
                     significant TCP/IP-based network connecting academic researchers to a new system of
@@ -88,7 +101,8 @@
             </article>
 
             <article>
-                <h3>Decommission of ARPANET – 1990</h3>
+                <h3>1990</h3>
+                <h4>Decommission of ARPANET</h4>
                 <p>
                     By January 1983, ARPANET had become part of a larger network of networks, which essentially
                     formed the Internet. As the Internet continued to grow, larger networks took over much of
@@ -100,7 +114,8 @@
             </article>
 
             <article>
-                <h3>Decommission of NSFNET – 1995</h3>
+                <h3>1995</h3>
+                <h4>Decommission of NSFNET</h4>
                 <p>
                     Commercial firms decided to take advantage of the Internet to expand. They began creating their
                     own network infrastructures, leading them to provide their own Internet services. This expansion
@@ -109,70 +124,81 @@
                 <p>Source: <a href="https://www.nsf.gov/impacts/internet" target="_blank">NSF - Internet</a></p>
             </article>
              <article>
-                <h3>Creation of ICANN – 1998</h3>
+                <h3>1998</h3>
+                <h4>Creation of ICANN</h4>
                 <p>The Internet Corporation for Assigned Names and Numbers (ICANN) was created as a non-profit organization with global participation in 1998. Its main role was to help coordinate domain names, as websites and online services were expanding rapidly and needed to be properly managed so that users could reach them.</p>
-                <a href="https://www.icann.org/history"target="_blank">ICANN - History</a>
+                <p>Source: <a href="https://www.icann.org/history"target="_blank">ICANN - History</a></p>
             </article>
             <article>
-                <h3>Launch of DNSSEC – 2010</h3>
+                <h3>2010</h3>
+                <h4>Launch of DNSSEC</h4>
                 <p>In the 2000s, the Internet became a major source of communication and interaction between people, so protecting DNS information from modification and false responses became necessary. On July 15, 2010, the DNS root zone was signed using DNSSEC (Domain Name System Security Extensions). Its role was to make sure that DNS information was authentic and had not been modified during communication.</p>
-                <a href="https://www.iana.org/archive/root-dnssec-launch"target="_blank">IANA - Root DNSSEC Launch</a>
+                <p>Source: <a href="https://www.iana.org/archive/root-dnssec-launch"target="_blank">IANA - Root DNSSEC Launch</a></p>
             </article>
             <article>
-                <h3>World IPv6 Launch – 2012 </h3>
+                <h3>2012</h3>
+                <h4>World IPv6 Launch</h4>
                 <p>As the years passed, more and more devices started to connect to the Internet, and IPv4 addresses started to run out, meaning that a new type of IP with a larger address space was needed. On June 6, 2012, the Internet Society organized the World IPv6 Launch, during which many companies permanently enabled IPv6, representing a major improvement for the continued growth of the Internet.</p>
-                <a href="https://www.internetsociety.org/news/press-releases/2012/world-ipv6-launch-solidifies-global-support-for-new-internet-protocol"target="_blank">Internet Society - World IPv6 Launch</a>
+               <p>Source: <a href="https://www.internetsociety.org/news/press-releases/2012/world-ipv6-launch-solidifies-global-support-for-new-internet-protocol"target="_blank">Internet Society - World IPv6 Launch</a></p>
             </article>
             <article>
-                <h3>QUIC Standardization – 2021</h3>
+                <h3>2021</h3>
+                <h4>QUIC Standardization</h4>
                 <p>Today’s internet applications require fast and secure connections between the client and the server. The QUIC protocol version 1 was standardized in May 2021 by the Internet Engineering Task Force through RFC 9000. The goal of the QUIC protocol is to enable secure connections, fast connection establishment, support for multiple streams of data, and path management.</p>
-                <a href="https://www.rfc-editor.org/rfc/rfc9000.html"target="_blank">RFC Editor - RFC 9000 (QUIC)</a>
+              <p>Source: <a href="https://www.rfc-editor.org/rfc/rfc9000.html"target="_blank">RFC Editor - RFC 9000 (QUIC)</a></p>
             </article>
         </section>
 
-        <section>
-            <h2>key Technologies</h2>
+        <section id="key-technologies">
+            <h2>Key Technologies</h2>
 
-            <h3>1) Packet Switching</h3>
-            <p>
-                Packet switching is an important technology used in computer networks. In the 1960s, researchers
-                such as Leonard Kleinrock worked on this idea. A 1965 experiment showed that computers could
-                communicate over long distances, but normal telephone systems were not good for this type of
-                communication. Packet switching solved this problem by dividing data into small parts called
-                packets. These packets can travel through different paths in the network and then be put back
-                together at the destination.
-            </p>
+            <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>Packet Switching</h3>
+                        <p>Splitting data into small packets for transmission</p>
+                    </div>
+                    <div class="face back">
+                        <p> Packet switching is an important technology used in computer networks. In the 1960s, researchers
+                            such as Leonard Kleinrock worked on this idea. A 1965 experiment showed that computers could
+                            communicate over long distances, but normal telephone systems were not good for this type of
+                            communication. Packet switching solved this problem by dividing data into small parts called
+                            packets. These packets can travel through different paths in the network and then be put back
+                            together at the destination.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+           <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>TCP/IP</h3>
+                        <p>Rules for sending data across networks</p>
+                    </div>
+                    <div class="face back">
+                        <p>TCP/IP mainly refers to two protocols:</p>
+                            <p> IP: An Internet protocol(IP) is made to deliver a packet of data from a source to itsdestination across interconnected networks. </p>
+                            <p>TCP: Transmission control protocol provides reliable data transfer. It detects data loss anderrors, and corrects them through retransmission</p>
+                            <p>TCP/IP is revolutionary because it allows different networks to communicate with each other reliably, making the Internet possible.</p>
+                    </div>
+                </div>
+            </article>
 
-            <h3>2) TCP/IP</h3>
-            <p>TCP/IP mainly refers to two protocols:</p>
-
-            <h4>a. IP</h4>
-            <p>
-                An Internet protocol(IP) is made to deliver a packet of data from a source to its
-                destination across interconnected networks.
-            </p>
-
-            <h4>b. TCP</h4>
-            <p>
-                Transmission control protocol provides reliable data transfer. It detects data loss and
-                errors, and corrects them through retransmission
-            </p>
-
-            <p>
-                TCP/IP is revolutionary because it allows different networks to communicate with each
-                other reliably, making the Internet possible.
-            </p>
-
-            <h3>3) DNS</h3>
-            <p>
-                DNS is a system that translates domain names, like google.com, into IP addresses that computers
-                can understand. Before DNS, host names and their corresponding addresses were maintained
-                through centralized lists, which became difficult to manage as the network grew. DNS introduced
-                a distributed system that automatically resolves domain names into IP addresses.
-            </p>
+            <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>DNS</h3>
+                        <p>Translates domain names into IP addresses.</p>
+                    </div>
+                    <div class="face back">
+                         <p>DNS is a system that translates domain names, like google.com, into IP addresses that computers can understand. Before DNS, host names and their corresponding addresses were maintained through centralized lists, which became difficult to manage as the network grew. DNS introduced a distributed system that automatically resolves domain names into IP addresses.</p>
+                    </div>
+                </div>
+            </article>
         </section>
 
-        <section>
+        <section id="resources">
             <h2>Resources</h2>
 
             <p><a href="https://www.internetsociety.org/resources/doc/2017/brief-history-internet/"target="_blank">Internet Society - Brief History of the Internet</a></p>

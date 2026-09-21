@@ -5,7 +5,8 @@
        {% block header %} <h1>History of the World Wide Web </h1> {% endblock %}
 
         {% block history_content %}
-        <section>
+        <section id="introduction">
+                <div class="intro-text">
             <h2>What is the World Wide Web?</h2>
             <p>
                 The World Wide Web Opened a new way to access and connect information through linked pages
@@ -14,13 +15,19 @@
                 local, draft or even highly polished. The Web works hand in hand with the Internet by providing a system
                 of websites and web pages that users can access through web browsers.
             </p>
+             </div>
+             <img
+        class="intro-image"
+        src="{{ url_for('static', filename='PIC6.png') }}"
+        alt="World Wide Web illustration" >
         </section>
 
-        <section>
+        <section id="milestones">
             <h2>Milestones of the History of the World Wide Web</h2>
 
             <article>
-                <h3>The invention of a new idea– 1989</h3>
+                <h3>1989</h3>
+                <h4>The invention of a new idea</h4>
                 <p>
                     Scientists were looking for a way to be able to share and find resources in universities and
                     institutes all over the world for research and knowledge purposes. This is where the idea of the
@@ -31,7 +38,8 @@
             </article>
 
             <article>
-                <h3>The beginning of the Web – 1990</h3>
+                <h3>1990</h3>
+                <h4>The beginning of the Web</h4>
                 <p>
                     The World Wide Web started with a simple proposal written by Tim Berners-Lee in March 1989,
                     then formalized with Belgian systems engineer Robert Cailliau as a management proposal in
@@ -42,7 +50,8 @@
             </article>
 
             <article>
-                <h3>First international system – 1991</h3>
+                <h3>1991</h3>
+                <h4>First international system</h4>
                 <p>
                     Tim Berners-Lee released his first World Wide Web software. In March 1991, it became
                     available on CERN computers, and later the software became publicly available in August 1991.
@@ -53,7 +62,8 @@
             </article>
 
             <article>
-                <h3>Going Global -1991</h3>
+                <h3>1991</h3>
+                <h4>Going Global</h4>
                 <p>
                     After becoming publicly available, many researchers saw the World Wide Web software as an
                     opportunity to make the Web global and accessible over the Internet rather than only locally. On
@@ -64,7 +74,8 @@
             </article>
 
             <article>
-                <h3>Bringing the Web to the World – 1993</h3>
+                <h3>1993</h3>
+                <h4>Bringing the Web to the World</h4>
                 <p>
                     Mosaic was an early graphical web browser released in 1993. It helped make the World Wide
                     Web more popular by allowing users to access and share information through more visual and
@@ -74,7 +85,8 @@
             </article>
 
             <article>
-                <h3>Free Web – 1993</h3>
+                <h3>1993</h3>
+                <h4>Free Web</h4>
                 <p>
                     What made the Web accessible to everyone was making the source code royalty-free, meaning
                     that the software was finally free to use on April 30, 1993. This event made the World Wide Web
@@ -84,7 +96,8 @@
             </article>
 
             <article>
-                <h3>Year of the Web – 1994</h3>
+                <h3>1994</h3>
+                <h4>Year of the Web</h4>
                 <p>
                     1994 marked a major period of growth for the Web. The first International World Wide Web
                     Conference was held at CERN in May 1994. By the end of that year, CERN reports that the Web
@@ -95,7 +108,8 @@
             </article>
 
             <article>
-                <h3>World Wide Web Consortium – 1994</h3>
+                <h3>1994</h3>
+                <h4>World Wide Web Consortium</h4>
                 <p>
                     The use of the Web was growing rapidly, and its development needed to be coordinated. This
                     resulted in the founding of the World Wide Web Consortium in October 1994 by Tim Berners-Lee at MIT, in collaboration with CERN and with support from DARPA and the European
@@ -104,55 +118,83 @@
                 </p>
                 <p>Source: <a href="https://www.w3.org/about/history/"target="_blank">W3C - History</a></p>
             </article>
-            article>
-                <h3>Introduction of CSS – 1996</h3>
+            <article>
+                <h3>1996</h3>
+                <h4>Introduction of CSS</h4>
                 <p>Since the development of the web, it was becoming increasingly hard to format the look of the website, there was a need for a more efficient way to control its style without having to add all the visual presentation right into the HTML code. CSS Level 1 was published as a W3C Recommendation on December 17, 1996 by the World Wide Web Consortium.</p>
-                <a href="https://www.w3.org/press-releases/1996/css1-rec/"target="_blank">W3C - CSS1 Recommendation</a>
+                <p>Source: <a href="https://www.w3.org/press-releases/1996/css1-rec/"target="_blank">W3C - CSS1 Recommendation</a></p>
             </article>
             <article>
-                <h3>HTML5 Adoption into Web Standards – 2014</h3>
+                <h3>2014</h3>
+                <h4>HTML5 Adoption into Web Standards</h4>
                 <p>With the evolution of the Web from a site-based technology to a platform for application development, video, audio, and interactions, there was a need for the HTML technology to grow too. This happened on October 28, 2014, when HTML5 was added by W3C as a Recommendation. HTML5 provided many capabilities required for the Web sites and applications.</p>
-                <a href="https://www.w3.org/press-releases/2014/html5-rec/"target="_blank">W3C - HTML5 Recommendation</a>
+                <p>Source: <a href="https://www.w3.org/press-releases/2014/html5-rec/"target="_blank">W3C - HTML5 Recommendation</a></p>
             </article>
             <article>
-                <h3>WebAssembly: A Web Standard – 2019</h3>
+                <h3>2019</h3>
+                <h4>WebAssembly: A Web Standard</h4>
                 <p>As web applications gained more capabilities and started to do things that were only possible using the traditional desktop application, WebAssembly was officially recognized as a Web standard by W3C on December 5, 2019. WebAssembly is a small and efficient binary code that can be executed in web browsers, and it enables developers to build fast Web applications while leveraging other Web technologies like JavaScript.</p>
-                <a href="https://www.w3.org/press-releases/2019/wasm/"target="_blank">W3C - WebAssembly Recommendation</a>
+                <p>Source: <a href="https://www.w3.org/press-releases/2019/wasm/"target="_blank">W3C - WebAssembly Recommendation</a></p>
             </article>
             <article>
-                <h3>HTTP/3 Release - 2022</h3>
+                <h3>2022</h3>
+                <h4>HTTP/3 Release</h4>
                 <p>The Internet further developed in the direction of speed and reliability of communication, particularly for mobile changing network connections. The HTTP/3 standard was released by the IETF in June 2022 as RFC 9114. HTTP/3 uses QUIC transport protocol and offers capabilities like multiple independent streams and fast connection setup, among others.</p>
-                <a href="https://www.rfc-editor.org/rfc/rfc9114.html"target="_blank">RFC Editor - RFC 9114 (HTTP/3)</a>
+                <p>Source: <a href="https://www.rfc-editor.org/rfc/rfc9114.html"target="_blank">RFC Editor - RFC 9114 (HTTP/3)</a></p>
             </article>
         </section>
 
-        <section>
+        <section id="key-technologies">
             <h2>Key Technologies</h2>
 
-            <h3>1) HTML:</h3>
-            <p>
-                Hypertext Markup Language created by Tim Berners-Lee was used to create and structure
-                content of the web using element like text, images, links, tables, etc. The HTML nowadays has
-                many functions involving:
-            </p>
-            <ol type="a">
-                <li>structure content like headings, paragraphs, lists, tables.</li>
-                <li>Embed media like images, audio, video.</li>
-                <li>Create hyperlinks: navigate across the web.</li>
-                <li>Create forms: text fields, checkboxes, buttons.</li>
-                <li>Specify metadata: title, character set, viewport.</li>
-            </ol>
+             <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>HTML</h3>
+                        <p>Structures the content of web pages</p>
+                    </div>
+                    <div class="face back">
+                         <p>Hypertext Markup Language created by Tim Berners-Lee was used to create and structure
+                            content of the web using element like text, images, links, tables, etc. The HTML nowadays has
+                            many functions involving:
+                            <ol type="a">
+                                <li>structure content like headings, paragraphs, lists, tables.</li>
+                                <li>Embed media like images, audio, video.</li>
+                                <li>Create hyperlinks: navigate across the web.</li>
+                                <li>Create forms: text fields, checkboxes, buttons.</li>
+                                <li>Specify metadata: title, character set, viewport.</li>
+                            </ol>
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-            <h3>2) HTTP:</h3>
-            <p>
-                Hypertext Transfer Protocol (HTTP) is a stateless, application-level request/response protocol
-                used for communication between clients and web servers. The client sends an HTTP request to a
-                server, and the server sends back an HTTP response containing the requested resource or
-                information.
-            </p>
+            
+           <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>HTTP</h3>
+                        <p>Transfers data between web browsers and servers</p>
+                    </div>
+                    <div class="face back">
+                         <p>Hypertext Transfer Protocol (HTTP) is a stateless, application-level request/response protocol
+                            used for communication between clients and web servers. The client sends an HTTP request to a
+                            server, and the server sends back an HTTP response containing the requested resource or
+                            information.
+                        </p>
+                    </div>
+                </div>
+            </article>
+           
 
-            <h3>3) URI/URL</h3>
-            <p>
+           <article class="TECH-container">
+                 <div class="TECH-card">
+                    <div class="face front">
+                        <h3>URI/URL</h3>
+                        <p>Identifies and locates resources on the web</p>
+                    </div>
+                    <div class="face back">
+                         <p>
                 A URI (Uniform Resource Identifier) identifies a resource on the Web. A URL (Uniform
                 Resource Locator) is a type of URI that provides the address of a resource and indicates how it
                 can be accessed.
@@ -163,29 +205,32 @@
 
             <table>
                 <tr>
-                    <td>a. https:</td>
+                    <td>https</td>
                     <td>protocol used to access the resource</td>
                 </tr>
                 <tr>
-                    <td>b. www.example.com:</td>
+                    <td>www.example.com</td>
                     <td>domain name</td>
                 </tr>
                 <tr>
-                    <td>c. /products/shoes:</td>
+                    <td>/products/shoes</td>
                     <td>path to the resource</td>
                 </tr>
                 <tr>
-                    <td>d. ?id=25:</td>
+                    <td>?id=25</td>
                     <td>query, used to send extra information (optional).</td>
                 </tr>
                 <tr>
-                    <td>e. #details:</td>
+                    <td>#details</td>
                     <td>fragment, points to a specific part of the page (optional)</td>
                 </tr>
             </table>
+                </div>
+                </div>
+            </article>
         </section>
 
-        <section>
+        <section id="resources">
             <h2>Resources</h2>
 
             <p><a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html"target="_blank">W3C - A Little History of the World Wide Web</a></p>

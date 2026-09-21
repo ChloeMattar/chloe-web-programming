@@ -9,7 +9,13 @@
 </head>
 
 <body>
-    <header>{% block header %} {% endblock %} </header>
+    <header>
+    <img src="{{ url_for('static', filename='logo.png') }}"
+         alt="Globe logo"
+         class="site-logo">
+
+    {% block header %}{% endblock %}
+</header>
     {% block navigation %}{% endblock %}
     <main>{% block content %}{% endblock %}</main>
 
