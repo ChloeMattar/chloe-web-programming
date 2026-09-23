@@ -3494,28 +3494,7 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover .face 
 }
 
 /* FLIP CARD — RESPONSIVE TEST */
-@media (max-width: 760px) {
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container {
-        width: min(360px, 100%);
-    }
 
-}
-
-@media (max-width: 480px) {
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .front h3 {
-        font-size: 1.45rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .front p {
-        font-size: 0.95rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back p {
-        font-size: 0.86rem;
-        line-height: 1.5;
-    }
-
-}
 
 /* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
@@ -3637,73 +3616,9 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back td:fir
 }
 
 /* MEDIUM SCREENS — 2 + 1 */
-@media (max-width: 1100px) and (min-width: 761px) {
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
-        height: 525px;
-    }
-
-}
 
 /* MOBILE — 1 PER ROW */
-@media (max-width: 760px) {
-    body:has(#key-technologies .TECH-card) #key-technologies {
-        gap: 1rem;
-    }
 
-    body:has(#key-technologies .TECH-card) #key-technologies > h2 {
-        grid-column: 1;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container,
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container:nth-of-type(3) {
-        grid-column: auto;
-        width: min( 430px, 100% );
-        justify-self: center;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
-        height: 475px;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
-        padding: 1.3rem 1.2rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back p {
-        font-size: 0.9rem;
-        line-height: 1.52;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ol,
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ul {
-        font-size: 0.87rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
-        font-size: 0.76rem;
-    }
-
-}
-
-@media (max-width: 480px) {
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
-        height: 495px;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
-        padding: 1.15rem 1rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
-        font-size: 0.72rem;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back td,
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back th {
-        padding: 0.34rem 0.36rem;
-    }
-
-}
 
 /* FLIP CARD — SMOOTHER ANIMATION */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover,
@@ -3845,38 +3760,13 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-container {
 
 }
 
-@media (max-width: 1100px) and (min-width: 761px) {
-    body:has(#key-technologies .TECH-card) #key-technologies {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
 
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container:nth-of-type(3) {
-        grid-column: 1 / -1 !important;
-        width: min(calc(50% - 0.6rem), 390px) !important;
-        justify-self: center !important;
-    }
-
-}
-
-@media (max-width: 760px) {
-    body:has(#key-technologies .TECH-card) #key-technologies {
-        grid-template-columns: 1fr !important;
-    }
-
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container,
-    body:has(#key-technologies .TECH-card) #key-technologies .TECH-container:nth-of-type(3) {
-        grid-column: auto !important;
-        width: min(430px, 100%) !important;
-        justify-self: center !important;
-    }
-
-}
 
 /* KEY TECHNOLOGIES — HTML-BASED GRID — Uses the corrected article.TECH-container structure directly */
 body:has(#key-technologies .TECH-card) #key-technologies {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     align-items: stretch;
 }
 
@@ -3894,24 +3784,126 @@ body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container {
     justify-self: stretch;
 }
 
-@media (max-width: 1100px) and (min-width: 761px) {
+/* KEY TECHNOLOGIES — MOBILE-FIRST RESPONSIVE LAYOUT */
+body:has(#key-technologies .TECH-card) #key-technologies > h2 {
+    grid-column: 1;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container,
+body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container:nth-of-type(3) {
+    grid-column: auto;
+    width: min(430px, 100%);
+    justify-self: center;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
+    height: 495px;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
+    padding: 1.15rem 1rem;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back p {
+    font-size: 0.9rem;
+    line-height: 1.52;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ol,
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ul {
+    font-size: 0.87rem;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
+    font-size: 0.72rem;
+}
+
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back td,
+body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back th {
+    padding: 0.34rem 0.36rem;
+}
+
+@media (min-width: 481px) {
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
+        height: 475px;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
+        padding: 1.3rem 1.2rem;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
+        font-size: 0.76rem;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back td,
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back th {
+        padding: 0.38rem 0.42rem;
+    }
+}
+
+@media (min-width: 761px) {
+    body:has(#key-technologies .TECH-card) #key-technologies {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies > h2 {
+        grid-column: 1 / -1;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container {
+        width: 100%;
+        justify-self: stretch;
+    }
+
     body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container:nth-of-type(3) {
         grid-column: 1 / -1;
         width: min(calc(50% - 0.6rem), 390px);
         justify-self: center;
     }
 
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
+        height: 525px;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
+        padding: 1.45rem 1.3rem;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ol,
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back ul {
+        font-size: 0.84rem;
+    }
+
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
+        font-size: 0.73rem;
+    }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 1101px) {
+    body:has(#key-technologies .TECH-card) #key-technologies {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container,
     body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container:nth-of-type(3) {
         grid-column: auto;
-        width: min(430px, 100%);
-        justify-self: center;
+        width: 100%;
+        justify-self: stretch;
     }
 
+    body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
+        height: 510px;
+    }
 }
+
+
 
 /* RESOURCES — TWO-COLUMN ACADEMIC DIRECTORY */
 body:has(nav:not(.section-nav)) #resources {
