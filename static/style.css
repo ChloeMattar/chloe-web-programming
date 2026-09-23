@@ -2366,17 +2366,17 @@ footer a:hover {
     color: #ffffff !important;
 }
 
-/* HISTORY INTRODUCTION — FULL-BLEED IMAGE BANNER — Light blue background, faded image, square edges */
+/* HISTORY INTRODUCTION — FULL-BLEED IMAGE BANNER — MOBILE FIRST */
 body:has(nav:not(.section-nav)) #introduction {
     position: relative;
-    width: calc(100vw - var(--history-sidebar-width));
-    margin-left: calc(50% - 50vw + (var(--history-sidebar-width) / 2));
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     margin-right: 0;
-    padding: clamp(1.6rem, 3vw, 2.35rem) clamp(1.3rem, 3.5vw, 2.7rem);
+    padding: 1.15rem 0.9rem 1.3rem;
     display: grid;
-    grid-template-columns: minmax(210px, 320px) minmax(0, 1fr);
-    grid-template-areas: "image text";
-    gap: clamp(1.1rem, 3vw, 2.5rem);
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "text";
+    gap: 0.95rem;
     align-items: center;
     background: linear-gradient( 180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 10%, rgba(255, 255, 255, 0.04) 90%, rgba(255, 255, 255, 0.16) 100% ), linear-gradient( 135deg, #edf4fa 0%, #e7eff8 45%, #dfe9f4 100% );
     border: none;
@@ -2395,7 +2395,7 @@ body:has(nav:not(.section-nav)) #introduction .intro-text {
     grid-area: text;
     position: relative;
     z-index: 1;
-    max-width: 780px;
+    max-width: none;
 }
 
 body:has(nav:not(.section-nav)) #introduction .intro-text h2 {
@@ -2407,14 +2407,14 @@ body:has(nav:not(.section-nav)) #introduction .intro-text h2 {
     border-radius: 0;
     box-shadow: none;
     color: var(--color-primary-dark);
-    font-size: clamp(1.8rem, 3vw, 2.55rem);
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
     line-height: 1.08;
 }
 
 body:has(nav:not(.section-nav)) #introduction .intro-text h2::after {
     content: "";
     display: block;
-    width: min(360px, 56vw);
+    width: min(250px, 70vw);
     height: 3px;
     margin-top: 0.8rem;
     background: linear-gradient( 90deg, rgba(125, 145, 166, 0.92) 0%, rgba(125, 145, 166, 0.44) 55%, rgba(125, 145, 166, 0.06) 100% );
@@ -2425,16 +2425,16 @@ body:has(nav:not(.section-nav)) #introduction .intro-text p {
     margin: 0;
     max-width: 68ch;
     color: var(--color-primary-dark);
-    font-size: clamp(0.98rem, 1.2vw, 1.05rem);
-    line-height: 1.85;
+    font-size: 0.97rem;
+    line-height: 1.78;
 }
 
 body:has(nav:not(.section-nav)) #introduction .intro-image {
     grid-area: image;
-    justify-self: start;
+    justify-self: center;
     align-self: center;
     display: block;
-    width: min(100%, 300px);
+    width: min(78vw, 285px);
     max-width: 100%;
     height: auto;
     object-fit: contain;
@@ -2444,50 +2444,47 @@ body:has(nav:not(.section-nav)) #introduction .intro-image {
     mask-image: radial-gradient( circle at 48% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 56%, rgba(0, 0, 0, 0.88) 70%, rgba(0, 0, 0, 0.45) 86%, rgba(0, 0, 0, 0) 100% );
 }
 
-@media (max-width: 760px) {
+@media (min-width: 481px) {
     body:has(nav:not(.section-nav)) #introduction {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: 0;
         padding: 1.3rem 1rem 1.45rem;
-        grid-template-columns: 1fr;
-        grid-template-areas: "image" "text";
-        gap: 0.95rem;
     }
 
     body:has(nav:not(.section-nav)) #introduction .intro-image {
-        justify-self: center;
         width: min(72vw, 310px);
     }
 
+    body:has(nav:not(.section-nav)) #introduction .intro-text p {
+        font-size: clamp(0.98rem, 1.2vw, 1.05rem);
+        line-height: 1.85;
+    }
+}
+
+@media (min-width: 761px) {
+    body:has(nav:not(.section-nav)) #introduction {
+        width: calc(100vw - var(--history-sidebar-width));
+        margin-left: calc(50% - 50vw + (var(--history-sidebar-width) / 2));
+        padding: clamp(1.6rem, 3vw, 2.35rem) clamp(1.3rem, 3.5vw, 2.7rem);
+        grid-template-columns: minmax(210px, 320px) minmax(0, 1fr);
+        grid-template-areas: "image text";
+        gap: clamp(1.1rem, 3vw, 2.5rem);
+    }
+
     body:has(nav:not(.section-nav)) #introduction .intro-text {
-        max-width: none;
+        max-width: 780px;
     }
 
     body:has(nav:not(.section-nav)) #introduction .intro-text h2 {
-        font-size: clamp(1.65rem, 7vw, 2.1rem);
+        font-size: clamp(1.8rem, 3vw, 2.55rem);
     }
 
     body:has(nav:not(.section-nav)) #introduction .intro-text h2::after {
-        width: min(250px, 70vw);
-    }
-
-}
-
-@media (max-width: 480px) {
-    body:has(nav:not(.section-nav)) #introduction {
-        padding: 1.15rem 0.9rem 1.3rem;
+        width: min(360px, 56vw);
     }
 
     body:has(nav:not(.section-nav)) #introduction .intro-image {
-        width: min(78vw, 285px);
+        justify-self: start;
+        width: min(100%, 300px);
     }
-
-    body:has(nav:not(.section-nav)) #introduction .intro-text p {
-        font-size: 0.97rem;
-        line-height: 1.78;
-    }
-
 }
 
 /* HOMEPAGE — KEEP CURRENT CARD COLORS ON HOVER — Prevent legacy cream hover surface from returning */
