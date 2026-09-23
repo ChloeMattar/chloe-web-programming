@@ -1404,79 +1404,8 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     pointer-events: none;
 }
 
-@media (max-width: 1100px) {
-    #milestones {
-        grid-auto-columns: calc((100% - 2rem) / 3);
-        padding-right: 2.25rem;
-        padding-left: 2.25rem;
-        scroll-padding-inline: 2.25rem;
-    }
 
-    #milestones > h2 {
-        left: 2.25rem;
-        grid-column: 1 / span 3;
-    }
 
-}
-
-@media (max-width: 820px) {
-    #milestones {
-        grid-auto-columns: calc((100% - 0.8rem) / 2);
-        column-gap: 0.8rem;
-        padding-right: 2rem;
-        padding-left: 2rem;
-        scroll-padding-inline: 2rem;
-    }
-
-    #milestones > h2 {
-        left: 2rem;
-        grid-column: 1 / span 2;
-    }
-
-    #milestones > article, #milestones > article:nth-of-type(odd), #milestones > article:nth-of-type(even) {
-        padding: 0.9rem 0.9rem 0.85rem;
-    }
-
-}
-
-@media (max-width: 560px) {
-    #milestones {
-        grid-auto-columns: 88%;
-        column-gap: 0.7rem;
-        padding: 0 1.7rem 0.75rem;
-        scroll-padding-inline: 1.7rem;
-    }
-
-    #milestones > h2 {
-        left: 1.7rem;
-        grid-column: 1;
-        font-size: 1.15rem;
-    }
-
-    #milestones > article h3 {
-        font-size: 0.98rem;
-    }
-
-    #milestones > article p {
-        font-size: 0.84rem;
-    }
-
-    #milestones::scroll-button(left), #milestones::scroll-button(right) {
-        width: 27px;
-        height: 27px;
-        font-size: 0.95rem;
-    }
-
-    #milestones::scroll-button(left) {
-        left: calc(anchor(left) + 0.08rem);
-    }
-
-    #milestones::scroll-button(right) {
-        left: calc(anchor(right) - 27px - 0.08rem);
-        right: auto;
-    }
-
-}
 
 /* MORE BLUE PALETTE — Dusty / powder / steel blue surfaces — Keeps the existing layout and interactions unchanged */
 h2 {
@@ -2050,12 +1979,6 @@ body:has(nav:not(.section-nav)) .section-nav {
     border-color: rgba(125, 145, 166, 0.56);
 }
 
-@media (max-width: 760px) {
-    body:has(nav:not(.section-nav)) #milestones > article h3::after {
-        width: min(130px, 58%);
-    }
-
-}
 
 /* HISTORY MILESTONES — UNIFORM CARD COLOR — All milestone cards use the same neutral surface. */
 /* HISTORY MILESTONES — FINAL CARD PALETTE — Card: #EEEAE4 — Inner/source boxes: #F6F3EE — Accent: #7D91A6 — Text: #2F3440 */
@@ -2735,56 +2658,8 @@ body:has(#milestones > article > h4) #milestones::scroll-button(right):disabled 
     pointer-events: none;
 }
 
-@media (max-width: 1000px) {
-    body:has(#milestones > article > h4) #milestones > article,
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
-        flex-basis: clamp(300px, 42vw, 350px);
-    }
 
-}
 
-@media (max-width: 760px) {
-    body:has(#milestones > article > h4) #milestones {
-        padding: 6.4rem 1rem 1.2rem;
-        scroll-padding-inline: 1rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > h2 {
-        left: 1rem;
-        max-width: calc(100% - 2rem);
-    }
-
-    body:has(#milestones > article > h4) #milestones > article,
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
-        flex-basis: min(84vw, 340px);
-        padding: 5.1rem 0.9rem 0.9rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article p {
-        font-size: 0.88rem;
-        line-height: 1.55;
-    }
-
-}
-
-@media (max-width: 480px) {
-    body:has(#milestones > article > h4) #milestones {
-        padding-top: 6.15rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article,
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
-    body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
-        flex-basis: 86vw;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article h3 {
-        font-size: 0.98rem;
-    }
-
-}
 
 /* INTERNET HISTORY (AI) — TIMELINE + CARDS — Restore the soft milestone rectangles while keeping the horizontal timeline */
 body:has(#milestones > article > h4) #milestones {
@@ -2824,27 +2699,6 @@ body:has(#milestones > article > h4) #milestones > article:nth-of-type(even):hov
     border-color: rgba(125, 145, 166, 0.55);
 }
 
-@media (max-width: 760px) {
-    body:has(#milestones > article > h4) #milestones {
-        gap: 0.8rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article::before {
-        left: -0.4rem;
-        right: -0.4rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article:first-of-type::before {
-        left: 50%;
-        right: -0.4rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article:last-of-type::before {
-        left: -0.4rem;
-        right: 50%;
-    }
-
-}
 
 /* INTERNET HISTORY (AI) — CARD BELOW TIMELINE — Exact pre-timeline colors; timeline remains outside the rectangle */
 body:has(#milestones > article > h4) #milestones > article,
@@ -2941,22 +2795,6 @@ body:has(#milestones > article > h4) #milestones > article:hover > p + a:last-ch
     background-color: #f4f8fb;
 }
 
-@media (max-width: 760px) {
-    body:has(#milestones > article > h4) #milestones > article > p {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article > h4 + p {
-        padding-top: 1rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article > p:last-child,
-    body:has(#milestones > article > h4) #milestones > article > p + a:last-child {
-        padding: 0.85rem 1rem 1rem;
-    }
-
-}
 
 /* INTERNET HISTORY (AI) — ONE UNIFIED TEXT/SOURCE CARD — Description + source share one continuous rectangle — All milestone rectangles are equal height */
 body:has(#milestones > article > h4) #milestones > article h4 {
@@ -3077,45 +2915,7 @@ body:has(#milestones > article > h4) #milestones > article::after {
     transform: translateX(-50%);
 }
 
-@media (max-width: 760px) {
-    body:has(#milestones > article > h4) #milestones > article h4 {
-        flex-basis: 5.35rem;
-        height: 5.35rem;
-        min-height: 5.35rem;
-        margin-bottom: 0.85rem;
-        padding: 0.65rem 0.8rem;
-        font-size: 1rem;
-    }
 
-    body:has(#milestones > article > h4) #milestones > article h4::before {
-        top: calc(100% + 0.85rem);
-        height: 29rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article > h4 + p {
-        flex-basis: 24.25rem;
-        height: 24.25rem;
-    }
-
-}
-
-@media (max-width: 480px) {
-    body:has(#milestones > article > h4) #milestones > article h4 {
-        flex-basis: 5.5rem;
-        height: 5.5rem;
-        min-height: 5.5rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article h4::before {
-        height: 30rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article > h4 + p {
-        flex-basis: 25.1rem;
-        height: 25.1rem;
-    }
-
-}
 
 /* INTERNET HISTORY (AI) — TEXT VISIBILITY FIX ONLY — Keep every existing size/color/layout exactly the same */
 body:has(#milestones > article > h4) #milestones > article > h4 + p,
@@ -3230,51 +3030,345 @@ body:has(#milestones > article > h4) #milestones > article > a {
     z-index: 2;
 }
 
-@media (max-width: 760px) {
+
+
+/* HISTORY MILESTONES — MOBILE FIRST RESPONSIVE LAYOUT
+   Phone styles are the default. Larger layouts are added progressively with min-width. */
+
+/* Mobile default: up to 480px */
+#milestones {
+    grid-auto-columns: 88%;
+    column-gap: 0.7rem;
+    padding: 0 1.7rem 0.75rem;
+    scroll-padding-inline: 1.7rem;
+}
+
+#milestones > h2 {
+    left: 1.7rem;
+    grid-column: 1;
+    font-size: 1.15rem;
+}
+
+#milestones > article,
+#milestones > article:nth-of-type(odd),
+#milestones > article:nth-of-type(even) {
+    padding: 0.9rem 0.9rem 0.85rem;
+}
+
+#milestones > article h3 {
+    font-size: 0.98rem;
+}
+
+#milestones > article p {
+    font-size: 0.84rem;
+}
+
+#milestones::scroll-button(left),
+#milestones::scroll-button(right) {
+    width: 27px;
+    height: 27px;
+    font-size: 0.95rem;
+}
+
+#milestones::scroll-button(left) {
+    left: calc(anchor(left) + 0.08rem);
+}
+
+#milestones::scroll-button(right) {
+    left: calc(anchor(right) - 27px - 0.08rem);
+    right: auto;
+}
+
+body:has(nav:not(.section-nav)) #milestones > article h3::after {
+    width: min(130px, 58%);
+}
+
+/* Timeline pages — mobile default */
+body:has(#milestones > article > h4) #milestones {
+    padding: 6.15rem 1rem 1.2rem;
+    scroll-padding-inline: 1rem;
+    gap: 0.8rem;
+}
+
+body:has(#milestones > article > h4) #milestones > h2 {
+    left: 1rem;
+    max-width: calc(100% - 2rem);
+}
+
+body:has(#milestones > article > h4) #milestones > article,
+body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
+body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
+    flex-basis: 86vw;
+    height: 42.35rem !important;
+    min-height: 42.35rem !important;
+    padding: 5.1rem 0.9rem 0.9rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article::before {
+    left: -0.4rem;
+    right: -0.4rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article:first-of-type::before {
+    left: 50%;
+    right: -0.4rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article:last-of-type::before {
+    left: -0.4rem;
+    right: 50%;
+}
+
+body:has(#milestones > article > h4) #milestones > article h3 {
+    font-size: 0.98rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+body:has(#milestones > article > h4) #milestones > article h4 {
+    flex-basis: 5.5rem;
+    height: 5.5rem;
+    min-height: 5.5rem;
+    margin-bottom: 0.85rem;
+    padding: 0.65rem 0.8rem;
+    font-size: 1rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article h4::before {
+    top: calc(100% + 0.85rem);
+    height: 30rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article > p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article > h4 + p {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+body:has(#milestones > article > h4) #milestones > article > p:last-child {
+    flex-basis: 4.9rem;
+    height: 4.9rem;
+    padding: 0.5rem 1rem 0.9rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article > a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.79rem;
+}
+
+body:has(#milestones > article > h4) #milestones > article > a:last-child {
+    padding-bottom: 0.9rem;
+}
+
+/* Larger phones */
+@media (min-width: 481px) {
+    body:has(#milestones > article > h4) #milestones {
+        padding-top: 6.4rem;
+    }
+
     body:has(#milestones > article > h4) #milestones > article,
     body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
     body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
+        flex-basis: min(84vw, 340px);
         height: 41.2rem !important;
         min-height: 41.2rem !important;
     }
 
-    body:has(#milestones > article > h4) #milestones > article > h4 + p {
-        padding: 1rem 1rem 0.5rem;
-        font-size: 0.88rem;
-        line-height: 1.55;
+    body:has(#milestones > article > h4) #milestones > article h4 {
+        flex-basis: 5.35rem;
+        height: 5.35rem;
+        min-height: 5.35rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article h4::before {
+        height: 29rem;
     }
 
     body:has(#milestones > article > h4) #milestones > article > p:last-child {
         flex-basis: 4.75rem;
         height: 4.75rem;
-        padding: 0.5rem 1rem 0.9rem;
     }
-
-    body:has(#milestones > article > h4) #milestones > article > a {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        font-size: 0.79rem;
-    }
-
-    body:has(#milestones > article > h4) #milestones > article > a:last-child {
-        padding-bottom: 0.9rem;
-    }
-
 }
 
-@media (max-width: 480px) {
+/* Two-card carousel layout */
+@media (min-width: 561px) {
+    #milestones {
+        grid-auto-columns: calc((100% - 0.8rem) / 2);
+        column-gap: 0.8rem;
+        padding: 0 2rem 0.9rem;
+        scroll-padding-inline: 2rem;
+    }
+
+    #milestones > h2 {
+        left: 2rem;
+        grid-column: 1 / span 2;
+        font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    }
+
+    #milestones > article h3 {
+        font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    }
+
+    #milestones > article p {
+        font-size: 0.86rem;
+    }
+
+    #milestones::scroll-button(left),
+    #milestones::scroll-button(right) {
+        width: 30px;
+        height: 30px;
+        font-size: 1.05rem;
+    }
+
+    #milestones::scroll-button(left) {
+        left: calc(anchor(left) + 0.25rem);
+    }
+
+    #milestones::scroll-button(right) {
+        left: calc(anchor(right) - 30px - 0.25rem);
+        right: auto;
+    }
+}
+
+/* Tablet / desktop history layout */
+@media (min-width: 761px) {
+    body:has(nav:not(.section-nav)) #milestones > article h3::after {
+        width: min(150px, 62%);
+    }
+
+    body:has(#milestones > article > h4) #milestones {
+        padding: 6.9rem 2.5rem 1.4rem;
+        scroll-padding-inline: 2.5rem;
+        gap: 1rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > h2 {
+        left: 2.5rem;
+        max-width: calc(100% - 5rem);
+    }
+
     body:has(#milestones > article > h4) #milestones > article,
     body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
     body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
-        height: 42.35rem !important;
-        min-height: 42.35rem !important;
+        flex-basis: clamp(300px, 42vw, 350px);
+        height: 40.8rem !important;
+        min-height: 40.8rem !important;
+        padding: 5.25rem 1rem 1rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article::before {
+        left: -0.5rem;
+        right: -0.5rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article:first-of-type::before {
+        left: 50%;
+        right: -0.5rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article:last-of-type::before {
+        left: -0.5rem;
+        right: 50%;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article p {
+        font-size: 0.91rem;
+        line-height: 1.58;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article h4 {
+        flex-basis: 5.6rem;
+        height: 5.6rem;
+        min-height: 5.6rem;
+        margin-bottom: 0.95rem;
+        padding: 0.75rem 1rem;
+        font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+    }
+
+    body:has(#milestones > article > h4) #milestones > article h4::before {
+        top: calc(100% + 0.95rem);
+        height: 28rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article > p {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article > h4 + p {
+        padding: 1.15rem 1.15rem 0.55rem;
+        font-size: 0.91rem;
+        line-height: 1.58;
     }
 
     body:has(#milestones > article > h4) #milestones > article > p:last-child {
-        flex-basis: 4.9rem;
-        height: 4.9rem;
+        flex-basis: 4.5rem;
+        height: 4.5rem;
+        padding: 0.55rem 1.15rem 1rem;
     }
 
+    body:has(#milestones > article > h4) #milestones > article > a {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+        font-size: 0.82rem;
+    }
+
+    body:has(#milestones > article > h4) #milestones > article > a:last-child {
+        padding-bottom: 1rem;
+    }
+}
+
+/* Three-card carousel layout */
+@media (min-width: 821px) {
+    #milestones {
+        grid-auto-columns: calc((100% - 2rem) / 3);
+        column-gap: 1rem;
+        padding: 0 2.25rem 0.9rem;
+        scroll-padding-inline: 2.25rem;
+    }
+
+    #milestones > h2 {
+        left: 2.25rem;
+        grid-column: 1 / span 3;
+    }
+
+    #milestones > article,
+    #milestones > article:nth-of-type(odd),
+    #milestones > article:nth-of-type(even) {
+        padding: 0.95rem 0.95rem 0.9rem;
+    }
+}
+
+/* Large timeline cards */
+@media (min-width: 1001px) {
+    body:has(#milestones > article > h4) #milestones > article,
+    body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
+    body:has(#milestones > article > h4) #milestones > article:nth-of-type(even) {
+        flex-basis: clamp(300px, 27vw, 365px);
+    }
+}
+
+/* Full desktop: four-card carousel */
+@media (min-width: 1101px) {
+    #milestones {
+        grid-auto-columns: calc((100% - 3rem) / 4);
+        padding: 0 2.35rem 0.9rem;
+        scroll-padding-inline: 2.35rem;
+    }
+
+    #milestones > h2 {
+        left: 2.35rem;
+        grid-column: 1 / span 4;
+    }
 }
 
 /* HISTORY PAGE LOGO — MOBILE FIRST
