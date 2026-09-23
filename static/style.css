@@ -1,4 +1,3 @@
-/* DUSTY BLUE LINEN — Global theme */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap");
 :root {
     --font-family: "Nunito", "Arial Rounded MT Bold", "Segoe UI", sans-serif;
@@ -45,7 +44,6 @@
     --pale-stone: #f8fafb;
 }
 
-/* RESET / BASE */
 * {
     box-sizing: border-box;
 }
@@ -62,7 +60,6 @@ body {
     line-height: 1.7;
 }
 
-/* HEADER */
 header {
     max-width: var(--content-width);
     margin: 0 auto;
@@ -109,7 +106,6 @@ header p {
     font-weight: 500;
 }
 
-/* HOMEPAGE HEADER */
 body:has(main > section:only-child) header h1 {
     white-space: nowrap;
 }
@@ -119,7 +115,6 @@ body:has(main > section:only-child) header p {
     font-size: 1rem;
 }
 
-/* NAVIGATION */
 nav {
     position: sticky;
     top: 14px;
@@ -177,7 +172,6 @@ nav a:active {
     transform: translateY(0) scale(0.97);
 }
 
-/* MAIN CONTENT */
 main {
     width: min( var(--content-width), calc(100% - 3rem) );
     margin: var(--space-xl) auto var(--space-xxl);
@@ -189,7 +183,6 @@ main {
     margin-inline: auto;
 }
 
-/* HOMEPAGE MAIN CONTENT */
 body:has(main > section:only-child) main {
     margin: 1rem auto 2.5rem;
 }
@@ -277,7 +270,6 @@ body:has(main > section:only-child) main > section:only-child li a:hover {
     transform: none;
 }
 
-/* NORMAL SECTIONS */
 section {
     margin-bottom: var(--space-xl);
     padding: var(--space-lg);
@@ -296,7 +288,6 @@ section:hover {
     transform: translateY(-4px);
 }
 
-/* MILESTONES GRID */
 main > section:nth-of-type(2) {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -320,7 +311,6 @@ main > section:nth-of-type(2) > h2 {
     margin-bottom: 0.7rem;
 }
 
-/* MILESTONE CARDS */
 main > section:nth-of-type(2) > article {
     display: flex;
     flex-direction: column;
@@ -342,7 +332,6 @@ main > section:nth-of-type(2) > article:nth-of-type(even) {
     background-color: var(--color-green);
 }
 
-/* MILESTONE TITLE AREA */
 main > section:nth-of-type(2) > article h3 {
     margin: -0.35rem -0.35rem 1.25rem;
     padding: 0.8rem 0.95rem;
@@ -364,14 +353,12 @@ main > section:nth-of-type(2) > article h3::after {
     border-radius: var(--radius-pill);
 }
 
-/* MILESTONE TEXT */
 main > section:nth-of-type(2) > article p {
     margin-top: 0;
     margin-bottom: 1rem;
     line-height: 1.75;
 }
 
-/* MILESTONE SOURCE AREA */
 main > section:nth-of-type(2) > article > p:last-child {
     margin-top: auto;
     margin-bottom: 0;
@@ -397,7 +384,6 @@ main > section:nth-of-type(2) > article p:last-child a {
     font-weight: 800;
 }
 
-/* MILESTONE HOVER */
 main > section:nth-of-type(2) > article:hover {
     transform: translateY(-7px) scale(1.01);
     border-color: rgba(125, 145, 166, 0.34);
@@ -421,7 +407,6 @@ main > section:nth-of-type(2) > article p:last-child a:hover {
     background-color: rgba(255, 255, 255, 0.50);
 }
 
-/* RESOURCES SECTION */
 main > section:last-of-type > a {
     display: block;
     width: fit-content;
@@ -458,7 +443,6 @@ main > section:last-of-type > a:hover, main > section:last-of-type > p > a:hover
     transform: translateX(6px);
 }
 
-/* HEADINGS */
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary-dark);
     line-height: 1.25;
@@ -488,7 +472,6 @@ h4 {
     font-weight: 700;
 }
 
-/* PARAGRAPHS */
 p {
     margin-top: 0;
     margin-bottom: var(--space-md);
@@ -498,7 +481,6 @@ main p:last-child {
     margin-bottom: 0;
 }
 
-/* LINKS */
 a {
     text-decoration-thickness: 1.5px;
     text-underline-offset: 3px;
@@ -509,7 +491,6 @@ main a {
     font-weight: 700;
 }
 
-/* LISTS */
 ul, ol {
     padding-left: 1.4rem;
 }
@@ -533,7 +514,6 @@ section li a:hover {
     transform: translateX(5px);
 }
 
-/* TABLES */
 table {
     width: 100%;
     margin: var(--space-md) 0;
@@ -561,7 +541,6 @@ tbody tr {
     transition: background-color var(--transition-fast);
 }
 
-/* FOOTER */
 footer {
     margin-top: var(--space-xxl);
     padding: var(--space-lg) var(--space-md);
@@ -579,15 +558,10 @@ footer p:last-child {
     margin-bottom: 0;
 }
 
-/* HOMEPAGE FOOTER */
 body:has(main > section:only-child) footer {
     margin-top: 2rem;
 }
 
-/* GLOBAL RESPONSIVE LAYOUT — MOBILE FIRST
-   Default styles target phones first. Larger layouts are added progressively. */
-
-/* PHONE DEFAULTS */
 header {
     padding: var(--space-lg) 1rem var(--space-lg);
     grid-template-columns: 1fr auto;
@@ -691,7 +665,6 @@ body:has(main > section:only-child) main > section:only-child li::before {
     height: 8px;
 }
 
-/* LARGER PHONES / TABLETS */
 @media (min-width: 481px) {
     header {
         padding-left: var(--space-md);
@@ -743,7 +716,6 @@ body:has(main > section:only-child) main > section:only-child li::before {
     }
 }
 
-/* TABLET / SMALL DESKTOP */
 @media (min-width: 761px) {
     header {
         padding: var(--space-xl) var(--space-md) var(--space-lg);
@@ -815,7 +787,6 @@ body:has(main > section:only-child) main > section:only-child li::before {
     }
 }
 
-/* FULL DESKTOP */
 @media (min-width: 1001px) {
     nav {
         justify-content: center;
@@ -830,7 +801,6 @@ body:has(main > section:only-child) main > section:only-child li::before {
     }
 }
 
-/* ACCESSIBILITY */
 a:focus-visible {
     outline: 3px solid rgba(125, 145, 166, 0.40);
     outline-offset: 3px;
@@ -850,8 +820,6 @@ a:focus-visible {
 
 }
 
-/* HISTORY NAVIGATION — MOBILE FIRST
-   Default = phone/mobile. Desktop sidebar activates at 761px and above. */
 body:has(nav:not(.section-nav)) {
     --history-sidebar-width: clamp(205px, 15vw, 235px);
     padding-left: 0;
@@ -911,7 +879,6 @@ nav:not(.section-nav) a:active {
     transform: translateY(0) scale(0.985);
 }
 
-/* Secondary navigation is also mobile-first. */
 .section-nav {
     top: 57px;
     max-width: calc(100% - 1rem);
@@ -997,7 +964,6 @@ nav:not(.section-nav) a:active {
     }
 }
 
-/* DUSTY BLUE ACCENT SYSTEM — Neutral large surfaces + repeated blue details */
 body:has(main > section:only-child) main > section:only-child li,
 body:has(main > section:only-child) main > section:only-child li:first-child,
 body:has(main > section:only-child) main > section:only-child li:nth-child(3n + 2),
@@ -1063,7 +1029,6 @@ main a:not(nav a) {
     text-decoration-color: rgba(125, 145, 166, 0.66);
 }
 
-/* HOMEPAGE — FEATURED PROJECT GRID — One large card on the left + four cards in a 2 × 2 grid — Strong consistent image fade + interactive navigation arrow */
 body:has(main > section:only-child) header {
     align-items: center;
 }
@@ -1214,8 +1179,6 @@ body:has(main > section:only-child) main > section:only-child li a:hover {
     color: var(--color-primary-dark);
 }
 
-
-/* HOMEPAGE — TRUE IMAGE FADE + CENTERED WEEKLY WORK */
 body:has(main > section:only-child) main > section:only-child h2::before,
 body:has(main > section:only-child) main > section:only-child h2::after {
     width: 48px;
@@ -1244,8 +1207,6 @@ body:has(main > section:only-child) main > section:only-child li:first-child .pr
     mask-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.08) 7%, rgba(0, 0, 0, 0.28) 16%, rgba(0, 0, 0, 0.58) 27%, rgba(0, 0, 0, 0.84) 39%, #000 52%, #000 100% );
 }
 
-
-/* HOMEPAGE — GRADIENT FIX — Plain centered heading + visible card-to-image fade */
 body:has(main > section:only-child) main > section:only-child h2 {
     gap: 0;
 }
@@ -1264,13 +1225,10 @@ body:has(main > section:only-child) main > section:only-child li:first-child .pr
     inset: 0;
 }
 
-/* HOMEPAGE HEADER — SINGLE TAGLINE */
 body:has(main > section:only-child) header h1 + p {
     letter-spacing: 0;
 }
 
-
-/* HOMEPAGE — WEEKLY WORK HEADING REFINEMENT */
 body:has(main > section:only-child) main > section:only-child h2 {
     border-left: 1px solid rgba(125, 145, 166, 0.28);
 }
@@ -1281,7 +1239,6 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     content: none !important;
 }
 
-/* HISTORY MILESTONES — COMPACT HORIZONTAL CAROUSEL — Applies to all four history pages only */
 #milestones {
     position: relative;
     anchor-name: --milestone-carousel;
@@ -1444,7 +1401,6 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     transform: translateY(-3px);
 }
 
-/* MILESTONE CAROUSEL ARROWS — Native CSS scroll controls */
 #milestones::scroll-button(left), #milestones::scroll-button(right) {
     position: absolute;
     position-anchor: --milestone-carousel;
@@ -1495,10 +1451,6 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     pointer-events: none;
 }
 
-
-
-
-/* MORE BLUE PALETTE — Dusty / powder / steel blue surfaces — Keeps the existing layout and interactions unchanged */
 h2 {
     border-left-color: var(--color-primary);
 }
@@ -1534,8 +1486,6 @@ section, section:nth-of-type(3n + 1) {
     background-color: #acc6dc;
 }
 
-/* BALANCED BLUE — LIGHT NEUTRAL BACKGROUND — Keep the blue accents/cards, but remove the blue page wash */
-/* HOMEPAGE — MOBILE-FIRST PROJECT CARD COMPOSITION */
 body:has(main > section:only-child) main {
     width: min(1480px, calc(100% - 1.5rem));
     margin-top: 0.5rem;
@@ -1548,7 +1498,6 @@ body:has(main > section:only-child) main > section:only-child {
     margin: 0 auto 1.4rem;
 }
 
-/* HOMEPAGE HEADER */
 body:has(main > section:only-child) header {
     max-width: 1480px;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1594,7 +1543,6 @@ body:has(main > section:only-child) header h1 + p + p {
     line-height: 1.4;
 }
 
-/* WEEKLY WORK HEADING */
 body:has(main > section:only-child) main > section:only-child h2 {
     position: relative;
     width: 100%;
@@ -1622,7 +1570,6 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     margin-left: 0.65rem;
 }
 
-/* FIVE EQUAL CARDS */
 body:has(main > section:only-child) main > section:only-child ul {
     margin: 0;
     padding: 0;
@@ -1767,7 +1714,6 @@ body:has(main > section:only-child) main > section:only-child li:focus-within a:
     box-shadow: 0 5px 13px rgba(41, 73, 99, 0.15);
 }
 
-/* RESPONSIVE HOMEPAGE — MOBILE FIRST */
 @media (min-width: 521px) {
     body:has(main > section:only-child) header .site-logo {
         width: 78px;
@@ -1826,7 +1772,6 @@ body:has(main > section:only-child) main > section:only-child li:focus-within a:
     }
 }
 
-/* DUSTY BLUE LINEN — REFINED PALETTE — Inspired by the reference vibe: — Linen + Ink + Dusty Blue + Soft Taupe + Pale Stone — Palette only — layout and interactions unchanged */
 h2 {
     background-color: rgba(245, 241, 234, 0.94);
     color: var(--ink);
@@ -1840,7 +1785,6 @@ body:has(main > section:only-child) main > section:only-child h2 {
     border-left-color: var(--dusty-blue);
 }
 
-/* HOMEPAGE CARDS — Pale stone surfaces, dusty-blue details */
 body:has(main > section:only-child) main > section:only-child li,
 body:has(main > section:only-child) main > section:only-child li:first-child,
 body:has(main > section:only-child) main > section:only-child li:nth-child(1),
@@ -1877,7 +1821,6 @@ body:has(main > section:only-child) .project-image::after {
     background: linear-gradient( to bottom, transparent 78%, rgba(47, 52, 64, 0.07) 100% );
 }
 
-/* HISTORY SECTIONS */
 #milestones {
     background: transparent;
     box-shadow: none;
@@ -1923,7 +1866,6 @@ body:has(main > section:only-child) .project-image::after {
     background-color: rgba(250, 248, 245, 0.94);
 }
 
-/* NAVIGATION */
 nav:not(.section-nav) {
     border-right-color: rgba(47, 52, 64, 0.24);
 }
@@ -1948,7 +1890,6 @@ nav:not(.section-nav) a:hover {
     color: #f8f6f2;
 }
 
-/* RESOURCES / TABLES / LINKS */
 main > section:last-of-type > a, main > section:last-of-type > p > a {
     border-color: #cdc3b8;
 }
@@ -1961,7 +1902,6 @@ footer {
     background-color: var(--ink);
 }
 
-/* SHAPE REFINEMENT — LESS ROUNDED / MORE EDITORIAL — Colors, layout, content and interactions stay unchanged */
 body:has(main > section:only-child) main > section:only-child li,
 body:has(main > section:only-child) main > section:only-child li:first-child {
     border-radius: 11px;
@@ -2012,7 +1952,6 @@ header .site-logo {
     border-radius: 50%;
 }
 
-/* EDITORIAL HEADING REFINEMENT — Remove the remaining "button/card" feeling from section titles — while keeping the current palette, layout and interactions. */
 body:has(nav:not(.section-nav)) main h2 {
     position: relative;
     display: block;
@@ -2053,12 +1992,10 @@ body:has(main > section:only-child) main > section:only-child h2 {
     box-shadow: none;
 }
 
-/* HISTORY MILESTONES — EQUAL CARD HEIGHTS — Keep every milestone rectangle aligned to the tallest card */
 #milestones > article, #milestones > article:nth-of-type(odd), #milestones > article:nth-of-type(even) {
     align-self: stretch;
 }
 
-/* HISTORY REFINEMENT — MILESTONE TITLE RULES + TRANSLUCENT SECTION NAV — Milestone title accents echo the main heading fade. — Secondary top navigation uses a translucent Dusty Blue surface. */
 body:has(nav:not(.section-nav)) #milestones > article h3::after {
     width: min(150px, 62%);
     height: 2px;
@@ -2070,9 +2007,6 @@ body:has(nav:not(.section-nav)) .section-nav {
     border-color: rgba(125, 145, 166, 0.56);
 }
 
-
-/* HISTORY MILESTONES — UNIFORM CARD COLOR — All milestone cards use the same neutral surface. */
-/* HISTORY MILESTONES — FINAL CARD PALETTE — Card: #EEEAE4 — Inner/source boxes: #F6F3EE — Accent: #7D91A6 — Text: #2F3440 */
 body:has(nav:not(.section-nav)) #milestones > article h3::after {
     background: linear-gradient( 90deg, #7D91A6 0%, rgba(125, 145, 166, 0.72) 58%, rgba(125, 145, 166, 0) 100% );
 }
@@ -2091,14 +2025,11 @@ body:has(nav:not(.section-nav)) #milestones > article > p:last-child {
     color: #2F3440;
 }
 
-/* CONNECTED BLUE — REFERENCE PALETTE — Deep navy + warm ivory + airy blue — Colors only: layout and content unchanged */
-/* PAGE BACKGROUND */
 body {
     background: radial-gradient( circle at 18% 8%, rgba(168, 199, 222, 0.22) 0%, rgba(168, 199, 222, 0) 28% ), radial-gradient( circle at 88% 16%, rgba(210, 226, 238, 0.36) 0%, rgba(210, 226, 238, 0) 31% ), linear-gradient( 180deg, #fcfbf8 0%, #f7f5ef 52%, #f1f4f6 100% );
     color: var(--color-text);
 }
 
-/* HEADER + TYPOGRAPHY */
 header h1, h1, h2, h3, h4, h5, h6 {
     color: var(--ink);
 }
@@ -2112,7 +2043,6 @@ header .site-logo {
     box-shadow: 0 8px 24px rgba(23, 50, 77, 0.12);
 }
 
-/* PRIMARY HISTORY SIDEBAR */
 nav:not(.section-nav) {
     background: linear-gradient( 180deg, #183550 0%, #163149 55%, #132c43 100% );
     border-right: 1px solid rgba(139, 174, 202, 0.24);
@@ -2128,7 +2058,6 @@ nav:not(.section-nav) a:hover, nav:not(.section-nav) a:focus-visible {
     color: #ffffff;
 }
 
-/* SECONDARY SECTION NAV */
 body:has(nav:not(.section-nav)) .section-nav {
     background-color: rgba(235, 243, 249, 0.94);
     border: 1px solid rgba(99, 143, 179, 0.24);
@@ -2147,7 +2076,6 @@ body:has(nav:not(.section-nav)) .section-nav a:focus-visible {
     color: #ffffff;
 }
 
-/* EDITORIAL HEADING ACCENTS */
 body:has(nav:not(.section-nav)) main h2::after,
 body:has(nav:not(.section-nav)) #milestones > article h3::after {
     background: linear-gradient( 90deg, #5f8fb5 0%, rgba(95, 143, 181, 0.72) 58%, rgba(95, 143, 181, 0) 100% );
@@ -2157,7 +2085,6 @@ body:has(main > section:only-child) main > section:only-child h2::after {
     background: linear-gradient( 90deg, rgba(95, 143, 181, 0.82), rgba(95, 143, 181, 0.08) );
 }
 
-/* LARGE HISTORY SECTIONS */
 section, section:nth-of-type(3n + 1), section:nth-of-type(3n + 2), section:nth-of-type(3n + 3) {
     background-color: rgba(247, 250, 252, 0.92);
     border-color: rgba(113, 153, 184, 0.28);
@@ -2177,7 +2104,6 @@ section:hover {
     box-shadow: 0 14px 32px rgba(23, 50, 77, 0.11);
 }
 
-/* MILESTONE CARDS */
 body:has(nav:not(.section-nav)) #milestones > article,
 body:has(nav:not(.section-nav)) #milestones > article:nth-of-type(odd),
 body:has(nav:not(.section-nav)) #milestones > article:nth-of-type(even),
@@ -2229,7 +2155,6 @@ body:has(nav:not(.section-nav)) #milestones > article > p:last-child a {
     color: #527fa3;
 }
 
-/* KEY TECHNOLOGIES */
 body:has(nav:not(.section-nav)) main section:not(#milestones) h3 {
     color: var(--ink);
 }
@@ -2238,7 +2163,6 @@ body:has(nav:not(.section-nav)) main section:not(#milestones) h3::after {
     background-color: #638fb3;
 }
 
-/* RESOURCES */
 main > section:last-of-type > a, main > section:last-of-type > p > a {
     background-color: rgba(252, 251, 248, 0.96);
     color: var(--ink);
@@ -2253,7 +2177,6 @@ main > section:last-of-type > a:hover, main > section:last-of-type > p > a:hover
     box-shadow: 0 6px 14px rgba(23, 50, 77, 0.08);
 }
 
-/* HOMEPAGE PROJECT CARDS */
 body:has(main > section:only-child) main > section:only-child li:nth-child(1) {
     --card-rgb: 228, 239, 247;
 }
@@ -2309,7 +2232,6 @@ body:has(main > section:only-child) main > section:only-child li:focus-within a:
     border-color: #4f7fa6;
 }
 
-/* LINKS / TABLES / SELECTION */
 a {
     color: #557f9f;
 }
@@ -2341,14 +2263,12 @@ a:focus-visible {
     outline-color: rgba(79, 127, 166, 0.70);
 }
 
-/* FOOTER */
 footer {
     background: linear-gradient( 180deg, #183550 0%, #142f48 100% );
     color: #f4f8fb;
     border-top-color: rgba(115, 154, 185, 0.28);
 }
 
-/* HISTORY NAV COLORS — MOBILE FIRST */
 nav:not(.section-nav) {
     background: #183550;
 }
@@ -2367,7 +2287,6 @@ body:has(nav:not(.section-nav)) .section-nav {
     }
 }
 
-/* FOOTER — BRIGHT TEXT FIX */
 footer, footer p, footer a {
     color: #f7fbff !important;
 }
@@ -2380,7 +2299,6 @@ footer a:hover {
     color: #ffffff !important;
 }
 
-/* HISTORY INTRODUCTION — FULL-BLEED IMAGE BANNER — MOBILE FIRST */
 body:has(nav:not(.section-nav)) #introduction {
     position: relative;
     width: 100vw;
@@ -2501,13 +2419,11 @@ body:has(nav:not(.section-nav)) #introduction .intro-image {
     }
 }
 
-/* HOMEPAGE — KEEP CURRENT CARD COLORS ON HOVER — Prevent legacy cream hover surface from returning */
 body:has(main > section:only-child) main > section:only-child li:hover,
 body:has(main > section:only-child) main > section:only-child li:focus-within {
     background-color: rgb(var(--card-rgb));
 }
 
-/* HOMEPAGE — FINAL HOVER COLOR FIX — Keep the text area in the current blue palette */
 body:has(main > section:only-child) main > section:only-child li,
 body:has(main > section:only-child) main > section:only-child li:hover,
 body:has(main > section:only-child) main > section:only-child li:focus-within {
@@ -2524,7 +2440,6 @@ body:has(main > section:only-child) .week-label, body:has(main > section:only-ch
     background: transparent !important;
 }
 
-/* HOMEPAGE HEADER — LARGER / FULLER TITLE — Larger title + long faded Dusty Blue accent line */
 body:has(main > section:only-child) header {
     padding-top: 1.55rem;
     padding-bottom: 1.2rem;
@@ -2581,7 +2496,6 @@ body:has(main > section:only-child) header h1 + p {
     }
 }
 
-/* INTERNET HISTORY (AI) — HORIZONTAL TIMELINE TEST — Scoped only to the page whose milestone articles use h3 years + h4 titles */
 body:has(#milestones > article > h4) #milestones {
     position: relative;
     display: flex;
@@ -2749,10 +2663,6 @@ body:has(#milestones > article > h4) #milestones::scroll-button(right):disabled 
     pointer-events: none;
 }
 
-
-
-
-/* INTERNET HISTORY (AI) — TIMELINE + CARDS — Restore the soft milestone rectangles while keeping the horizontal timeline */
 body:has(#milestones > article > h4) #milestones {
     gap: 1rem;
 }
@@ -2790,8 +2700,6 @@ body:has(#milestones > article > h4) #milestones > article:nth-of-type(even):hov
     border-color: rgba(125, 145, 166, 0.55);
 }
 
-
-/* INTERNET HISTORY (AI) — CARD BELOW TIMELINE — Exact pre-timeline colors; timeline remains outside the rectangle */
 body:has(#milestones > article > h4) #milestones > article,
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(even),
@@ -2832,7 +2740,6 @@ body:has(#milestones > article > h4) #milestones > article h3 {
     z-index: 4;
 }
 
-/* INTERNET HISTORY (AI) — TEXT + SOURCE CARD ONLY — Year, timeline and title stay outside the rectangle */
 body:has(#milestones > article > h4) #milestones > article > p {
     position: relative;
     z-index: 1;
@@ -2886,8 +2793,6 @@ body:has(#milestones > article > h4) #milestones > article:hover > p + a:last-ch
     background-color: #f4f8fb;
 }
 
-
-/* INTERNET HISTORY (AI) — ONE UNIFIED TEXT/SOURCE CARD — Description + source share one continuous rectangle — All milestone rectangles are equal height */
 body:has(#milestones > article > h4) #milestones > article h4 {
     margin-bottom: 0.9rem;
 }
@@ -2911,7 +2816,6 @@ body:has(#milestones > article > h4) #milestones > article > p:last-child {
     border-top-color: transparent;
 }
 
-/* INTERNET HISTORY (AI) — TIMELINE REFINEMENT — Centered title + restored blue fade/line + truly equal unified cards */
 body:has(#milestones > article > h4) #milestones > article,
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(even),
@@ -3006,16 +2910,12 @@ body:has(#milestones > article > h4) #milestones > article::after {
     transform: translateX(-50%);
 }
 
-
-
-/* INTERNET HISTORY (AI) — TEXT VISIBILITY FIX ONLY — Keep every existing size/color/layout exactly the same */
 body:has(#milestones > article > h4) #milestones > article > h4 + p,
 body:has(#milestones > article > h4) #milestones > article > p:last-child,
 body:has(#milestones > article > h4) #milestones > article > p + a:last-child {
     z-index: 2;
 }
 
-/* ALL FOUR HISTORY PAGES — FINAL TIMELINE ALIGNMENT — Same approved Internet AI layout on every history page — Direct-source pages are integrated into the same equal card */
 body:has(#milestones > article > h4) #milestones > article,
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
 body:has(#milestones > article > h4) #milestones > article:nth-of-type(even),
@@ -3121,12 +3021,6 @@ body:has(#milestones > article > h4) #milestones > article > a {
     z-index: 2;
 }
 
-
-
-/* HISTORY MILESTONES — MOBILE FIRST RESPONSIVE LAYOUT
-   Phone styles are the default. Larger layouts are added progressively with min-width. */
-
-/* Mobile default: up to 480px */
 #milestones {
     grid-auto-columns: 88%;
     column-gap: 0.7rem;
@@ -3174,7 +3068,6 @@ body:has(nav:not(.section-nav)) #milestones > article h3::after {
     width: min(130px, 58%);
 }
 
-/* Timeline pages — mobile default */
 body:has(#milestones > article > h4) #milestones {
     padding: 6.15rem 1rem 1.2rem;
     scroll-padding-inline: 1rem;
@@ -3260,7 +3153,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     padding-bottom: 0.9rem;
 }
 
-/* Larger phones */
 @media (min-width: 481px) {
     body:has(#milestones > article > h4) #milestones {
         padding-top: 6.4rem;
@@ -3290,7 +3182,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* Two-card carousel layout */
 @media (min-width: 561px) {
     #milestones {
         grid-auto-columns: calc((100% - 0.8rem) / 2);
@@ -3330,7 +3221,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* Tablet / desktop history layout */
 @media (min-width: 761px) {
     body:has(nav:not(.section-nav)) #milestones > article h3::after {
         width: min(150px, 62%);
@@ -3418,7 +3308,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* Three-card carousel layout */
 @media (min-width: 821px) {
     #milestones {
         grid-auto-columns: calc((100% - 2rem) / 3);
@@ -3439,7 +3328,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* Large timeline cards */
 @media (min-width: 1001px) {
     body:has(#milestones > article > h4) #milestones > article,
     body:has(#milestones > article > h4) #milestones > article:nth-of-type(odd),
@@ -3448,7 +3336,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* Full desktop: four-card carousel */
 @media (min-width: 1101px) {
     #milestones {
         grid-auto-columns: calc((100% - 3rem) / 4);
@@ -3462,8 +3349,6 @@ body:has(#milestones > article > h4) #milestones > article > a:last-child {
     }
 }
 
-/* HISTORY PAGE LOGO — MOBILE FIRST
-   Mobile keeps the logo in the header; desktop moves it into the left sidebar. */
 body:has(nav:not(.section-nav)) header .site-logo {
     position: static;
     width: 68px;
@@ -3511,7 +3396,6 @@ body:has(nav:not(.section-nav)) nav:not(.section-nav) {
     }
 }
 
-/* KEY TECHNOLOGIES — FLIP CARD TEST — Internet History (AI): Packet Switching only */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
     position: relative;
     cursor: pointer;
@@ -3584,10 +3468,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover .face 
     box-shadow: 0 16px 34px rgba(47, 52, 64, 0.14);
 }
 
-/* FLIP CARD — RESPONSIVE TEST */
-
-
-/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
     body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
         transition-duration: 0.01ms;
@@ -3595,7 +3475,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover .face 
 
 }
 
-/* KEY TECHNOLOGIES — FINAL FLIP CARD GRID — 3 across desktop / 2 medium / 1 mobile */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-container {
     width: 100%;
     min-width: 0;
@@ -3706,12 +3585,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back td:fir
     font-weight: 700;
 }
 
-/* MEDIUM SCREENS — 2 + 1 */
-
-/* MOBILE — 1 PER ROW */
-
-
-/* FLIP CARD — SMOOTHER ANIMATION */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover,
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:active {
     transform: rotateY(180deg) translateZ(0);
@@ -3725,8 +3598,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card:hover .face 
     box-shadow: 0 10px 26px rgba(47, 52, 64, 0.10);
 }
 
-/* WRAPPER GRID — RESPONSIVE */
-/* KEY TECHNOLOGIES — FINAL INTERACTION + VISUAL REFINEMENT — Immediate hover / sharper cards / blue front wash / refined URL table */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-container {
     perspective: 1100px;
     transform: none !important;
@@ -3769,7 +3640,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card {
 
 }
 
-/* SHARPER CARD SHAPE */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -3787,7 +3657,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back {
     border-radius: 11px !important;
 }
 
-/* URI / URL TABLE — REFINED */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table {
     overflow: hidden;
     border: 1px solid rgba(125, 145, 166, 0.34);
@@ -3819,7 +3688,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back table 
     background: rgba(255, 255, 255, 0.68);
 }
 
-/* TECHNOLOGY CARDS — SHARPER EDGES + BOTTOM ACCENT */
 body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .face {
     border-radius: 6px !important;
     border-top: 4px solid var(--color-primary) !important;
@@ -3851,9 +3719,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-container {
 
 }
 
-
-
-/* KEY TECHNOLOGIES — HTML-BASED GRID — Uses the corrected article.TECH-container structure directly */
 body:has(#key-technologies .TECH-card) #key-technologies {
     display: grid;
     grid-template-columns: 1fr;
@@ -3875,7 +3740,6 @@ body:has(#key-technologies .TECH-card) #key-technologies > .TECH-container {
     justify-self: stretch;
 }
 
-/* KEY TECHNOLOGIES — MOBILE-FIRST RESPONSIVE LAYOUT */
 body:has(#key-technologies .TECH-card) #key-technologies > h2 {
     grid-column: 1;
 }
@@ -3994,9 +3858,6 @@ body:has(#key-technologies .TECH-card) #key-technologies .TECH-card .back th {
     }
 }
 
-
-
-/* RESOURCES — MOBILE-FIRST ACADEMIC DIRECTORY */
 body:has(nav:not(.section-nav)) #resources {
     display: grid;
     grid-template-columns: 1fr;
@@ -4093,7 +3954,6 @@ body:has(nav:not(.section-nav)) #resources > p > a::after {
     }
 }
 
-/* PAGE LOAD TRANSITION — CSS-only: soft fade + subtle upward reveal */
 @keyframes page-fade-in {
     from {
         opacity: 0;
@@ -4129,7 +3989,6 @@ body:has(nav:not(.section-nav)) #resources > p > a::after {
 
 }
 
-/* KEY TECHNOLOGIES — MOBILE TAP FLIP — Desktop keeps hover; touch devices keep a tapped card flipped */
 .TECH-toggle, .TECH-toggle-label {
     display: none;
 }
