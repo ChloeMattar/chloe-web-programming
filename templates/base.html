@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Web Programming Portfolio{% endblock %}</title>
+    <title>{% block title %}My Web Programming Portfolio{% endblock %}</title> <!--This can be different in every page, that's why we added {%block title%}-->
     <link rel="stylesheet"
-            href="{{ url_for('static', filename='style.css') }}" />
+            href="{{ url_for('static', filename='style.css') }}" />  <!--This is connect my html to the style.css sheet -->
 </head>
 
 <body>
     <header>
     <img src="{{ url_for('static', filename='Logo.png') }}"
          alt="Globe logo"
-         class="site-logo">
+         class="site-logo"> <!--For Css to recognize it and use it, there are other ways, like using ids but using class is easier since it's not unique + no priority-->
 
     {% block header %}{% endblock %}
 </header>

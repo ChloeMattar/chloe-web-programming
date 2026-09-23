@@ -6,8 +6,8 @@
    
    
     {% block history_content %} 
-        <section id="introduction">
-                <div class="intro-text">
+        <section id="introduction"> <!--Using id helps to divide the page more clearly, also the main issue after creating a new navigation we used href="introduction", to link it we use id="introduction" -->
+                <div class="intro-text"> <!--This division is used to style the the text + title differently from the image, we see in other sections it's not used! Not always needed at all since it's always better to use semantics elements-->
             <h2>What is the Internet?</h2>
             <p>The Internet is a global system of all interconnected computer networks, it allows collaboration and communication between individuals and their computers regardless of their geographic locations through communication protocols especially TCP/IP. It is one of the most successful revolutions and investments that the World has ever seen.</p>
          </div>
@@ -17,7 +17,7 @@
         alt="World Wide Web illustration" >
         </section>
 
-        <section id="milestones"> 
+        <section id="milestones">
             <h2>Milestones of the History of the Internet</h2>
 
             <article> 
@@ -109,8 +109,8 @@
             <h2>Key Technologies</h2>
       
            <article class="TECH-container">
-                 <input type="checkbox" id="tech-packet" class="TECH-toggle">
-                 <label for="tech-packet" class="TECH-toggle-label" aria-label="Flip technology card"></label>
+                 <input type="checkbox" id="tech-packet" class="TECH-toggle"> <!--Card flip is one of 3d animations css styles, this input is specifically used to check the state of the card (which part it's flipping) +tech-toggle is the inivisible checkbox -->
+                 <label for="tech-packet" class="TECH-toggle-label" aria-label="Flip technology card"></label> <!--Clicking this label means we check the checkbox (changing the state)-->
 
                  <div class="TECH-card">
                     <div class="face front">
