@@ -4035,3 +4035,324 @@ body:has(nav:not(.section-nav)) #resources > p > a::after {
     }
 
 }
+
+/* =========================================================
+   Week 4 submitted profile page
+   Mobile-first — profile.html stays untouched
+   ========================================================= */
+
+body:has(.profile) > header {
+    display: none;
+}
+
+body:has(.profile) main,
+body:has(.profile) .profile {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+}
+
+body:has(.profile) main {
+    margin-bottom: var(--space-xxl);
+}
+
+.profile {
+    color: var(--color-text);
+}
+
+.profile .profile-header {
+    display: block;
+    width: 100vw;
+    max-width: none;
+    margin: 0 0 1.45rem calc(50% - 50vw);
+    padding: 1.15rem 0.9rem 1.3rem;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0.04) 10%,
+            rgba(255, 255, 255, 0.04) 90%,
+            rgba(255, 255, 255, 0.16) 100%
+        ),
+        linear-gradient(
+            135deg,
+            #edf4fa 0%,
+            #e7eff8 45%,
+            #dfe9f4 100%
+        );
+    border: 0;
+    border-radius: 0;
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.92),
+        inset 0 -2px 0 rgba(255, 255, 255, 0.92);
+}
+
+.profile .profile-header h1 {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-size: clamp(1.85rem, 8vw, 2.55rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+}
+
+.profile .profile-header h1::after {
+    content: "";
+    display: block;
+    width: min(250px, 70vw);
+    height: 3px;
+    margin-top: 0.7rem;
+    background: linear-gradient(
+        90deg,
+        rgba(125, 145, 166, 0.92) 0%,
+        rgba(125, 145, 166, 0.44) 55%,
+        rgba(125, 145, 166, 0.06) 100%
+    );
+    border-radius: var(--radius-pill);
+}
+
+.profile .profile-title {
+    margin: 0.8rem 0 0.55rem;
+    color: var(--color-primary);
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.profile .profile-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    margin: 0.2rem 0 0;
+    color: var(--color-text);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+.profile .profile-contact span {
+    margin: 0;
+    white-space: normal;
+}
+
+.profile .profile-contact a {
+    color: var(--color-primary-dark);
+    text-decoration-color: rgba(99, 143, 179, 0.55);
+}
+
+.profile section,
+.profile > p:last-child {
+    width: min(860px, calc(100% - 1.5rem));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile section {
+    margin-bottom: 1rem;
+    padding: 1rem 0.85rem 0.95rem;
+    background: var(--color-surface);
+    border: 0;
+    border-radius: 2px;
+    box-shadow: var(--shadow-soft);
+    transform: none;
+}
+
+.profile section:hover {
+    transform: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.profile section h2 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 0.9rem;
+    padding: 0 0 0.35rem;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--color-primary-dark);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.profile section h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 0.3rem;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary) 0%,
+        var(--dusty-blue) 58%,
+        rgba(99, 143, 179, 0) 100%
+    );
+}
+
+.profile section dl {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    margin: 0;
+}
+
+.profile section dt {
+    margin-top: 0.45rem;
+    color: var(--color-primary-dark);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.profile section dd {
+    margin: 0;
+    padding: 0.55rem 0.65rem;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(99, 143, 179, 0.20);
+    border-radius: 2px;
+    color: var(--color-text);
+    line-height: 1.45;
+}
+
+.profile section > p {
+    margin: 0.55rem 0 0.35rem;
+    color: var(--color-text);
+    line-height: 1.55;
+}
+
+.profile .chips {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+    margin: 0.35rem 0 0.8rem;
+    padding: 0;
+    list-style: none;
+}
+
+.profile .chip {
+    margin: 0;
+    padding: 0.48rem 0.6rem;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(99, 143, 179, 0.24);
+    border-radius: 2px;
+    color: var(--color-primary-dark);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.profile .swatch {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+    border: 1px solid rgba(99, 143, 179, 0.32);
+    border-radius: 2px;
+    vertical-align: -0.1rem;
+}
+
+.profile > p:last-child {
+    margin-top: 1rem;
+    padding: 0.7rem 0.8rem;
+    color: var(--color-muted) !important;
+    background: rgba(99, 143, 179, 0.06);
+    border-top: 1px solid rgba(99, 143, 179, 0.18);
+    border-bottom: 1px solid rgba(99, 143, 179, 0.18);
+    font-size: 0.82rem !important;
+}
+
+@media (min-width: 481px) {
+    .profile .profile-header {
+        padding: 1.3rem 1rem 1.45rem;
+    }
+
+    .profile section,
+    .profile > p:last-child {
+        width: min(860px, calc(100% - 2rem));
+    }
+
+    .profile section {
+        padding: 1rem;
+    }
+
+    .profile .chips {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 761px) {
+    .profile .profile-header {
+        padding:
+            clamp(1.6rem, 3vw, 2.35rem)
+            clamp(1.3rem, 3.5vw, 2.7rem)
+            clamp(1.6rem, 3vw, 2.1rem);
+    }
+
+    .profile .profile-title {
+        font-size: 1.05rem;
+    }
+
+    .profile .profile-contact {
+        font-size: 0.94rem;
+    }
+
+    .profile section {
+        padding: 1.05rem 1rem 1rem;
+    }
+
+    .profile section dl {
+        grid-template-columns: minmax(150px, 0.75fr) minmax(0, 1.75fr);
+        gap: 0.45rem 0.9rem;
+        align-items: center;
+    }
+
+    .profile section dt {
+        margin: 0;
+        font-size: 0.84rem;
+    }
+
+    body:has(nav:not(.section-nav)) .profile .profile-header {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    body:has(nav:not(.section-nav)) .profile section,
+    body:has(nav:not(.section-nav)) .profile > p:last-child {
+        width: min(860px, calc(100% - 3rem));
+    }
+}
+
+@media (min-width: 1001px) {
+    .profile .profile-header > * {
+        max-width: 1180px;
+    }
+
+    .profile .chips {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Existing base.html logo inside the desktop sidebar — no extra HTML needed */
+@media (min-width: 761px) {
+    body:has(nav:not(.section-nav)) header .site-logo {
+        position: fixed;
+        top: 1.15rem;
+        left: calc(var(--history-sidebar-width) / 2);
+        z-index: 1200;
+
+        width: 68px;
+        height: 68px;
+        margin: 0;
+        object-fit: cover;
+
+        transform: translateX(-50%);
+    }
+
+    body:has(nav:not(.section-nav)) header .site-logo:hover {
+        transform: translateX(-50%) translateY(-3px) rotate(4deg) scale(1.03);
+    }
+
+    body:has(nav:not(.section-nav)) nav:not(.section-nav) {
+        padding-top: 6.6rem;
+    }
+}

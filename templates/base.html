@@ -6,6 +6,9 @@
     <title>{% block title %}My Web Programming Portfolio{% endblock %}</title> <!--This can be different in every page-->
     <link rel="stylesheet"
             href="{{ url_for('static', filename='style.css') }}" />  <!--This is connect my html to the style.css sheet -->
+    <rel="stylesheet"
+        href="{{ url_for('static', filename='my_styles.css') }}" />
+    {% block head %}{% endblock %}
 </head>
 
 <body>
@@ -25,3 +28,4 @@
     </footer>   
 </body>
 </html>
+

@@ -1,14 +1,8 @@
-{% extends "base.html" %}
+{% extends "nav-base.html" %}
 
 {% block navigation %}
-<nav>
-    <a href="{{ url_for('home') }}">Home</a>
-    <a href="{{ url_for('internet_history') }}">History of the Internet</a>
-    <a href="{{ url_for('internet_history_ai') }}">History of the Internet (AI)</a>
-    <a href="{{ url_for('web_history') }}">History of the World Wide Web</a>
-    <a href="{{ url_for('web_history_ai') }}">History of the World Wide Web (AI)</a>
-</nav>
 
+{{ super() }} <!--This is to keep to navigation in nav-base, and not create issues! -->
 <nav class="section-nav"> <!--We used class here for reusability purpose, first it was added because we can't have 2 nav so we needed to add a class. Also, this specific navigation style could be reusable in the future since the website is not finished to make it reusable I used class!-->
     <a href="#introduction">Introduction</a>
     <a href="#milestones">Milestones</a>

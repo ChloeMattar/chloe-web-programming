@@ -1,0 +1,170 @@
+{% extends "nav-base.html" %}
+
+{% block title %}Engineering Student Profile{% endblock %}
+{% block head %}
+ <link rel="stylesheet"
+ href="{{ url_for('static', filename='form_style.css') }}"/>
+{% endblock %}
+
+{% block content%}
+  <h2>Engineering Student Profile</h2>
+
+    <p>Complete this form to provide information about your
+    academic background, technical skills, internship
+    experience, and Final Year Project preferences.</p>
+    <form action="{{ url_for('submit_profile') }}"
+        method="post">
+        <input type="hidden" name="form_version" value="2026-2027">
+
+        <fieldset>
+            <legend>1. Personal Information</legend>
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" placeholder="202400007" pattern="[0-9]{9}" required><br>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="First name and Last name" required><br>
+            <label for="email">USEK Email:</label>
+            <input type="email" id="email" name="email" placeholder="student@net.usek.edu.lb" pattern="[A-Za-z.]+@net\.usek\.edu\.lb" required><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+961 76 123123" pattern="\+961 (03|70|71|76|78|79|81) [0-9]{6}"><br>
+            <label for="birthdate">Date of Birth:</label>
+            <input type="date" id="birthdate" name="birthdate"><br>
+            <label for="portfolio">GitHub:</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/username"><br>
+            <label for="gin446">GIN446 website</label>
+            <input type="url" id="gin446" name="gin446" placeholder="https://projectname.onrender.com"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>2. Academic Information</legend>
+            <label for="major">Engineering Major:</label>
+            <select id="major" name="major" required>
+                <option value="">--Select your major--</option>
+                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                <option value="Telecommunications Engineering">Telecommunications Engineering</option>
+            </select><br>
+
+            <label for="gpa">Current GPA/100</label>
+            <input type="number" id="gpa" name="gpa" min="40" max="100" step="0.01" placeholder="85.50" required><br>
+            <label for="credits">Credits completed</label>
+            <input type="number" id="credits" name="credits" min="0" required><br>
+
+            <fieldset>
+                <legend>Expected graduation</legend>
+                <input type="radio" id="graduation_Spring" name="graduation" value="Spring" required>
+                <label for="graduation_Spring">Spring</label>
+                <input type="radio" id="graduation_Summer" name="graduation" value="Summer">
+                <label for="graduation_Summer">Summer</label>
+                <input type="radio" id="graduation_Fall" name="graduation" value="Fall">
+                <label for="graduation_Fall">Fall</label>
+            </fieldset>
+            <label for="graduation_month">Expected Graduation Month & Year</label>
+            <input type="month" id="graduation_month" name="graduation_month" required><br>
+            <fieldset>
+                <legend>Have you completed an engineering internship?</legend>
+                <input type="radio" id="internship_completed_yes" name="internship_completed" value="Yes" required>
+                <label for="internship_completed_yes">Yes</label>
+                <input type="radio" id="internship_completed_no" name="internship_completed" value="No">
+                <label for="internship_completed_no">No</label>
+            </fieldset>
+        </fieldset>
+
+        <fieldset>
+            <legend>3. Technical Background</legend>
+            <fieldset>
+                <legend>Select all areas in which you have experience:</legend>
+                <input type="checkbox" id="Programming" name="skills" value="Programming">
+                <label for="Programming">Programming</label><br>
+                <input type="checkbox" id="Embedded" name="skills" value="Embedded Systems">
+                <label for="Embedded">Embedded Systems</label><br>
+                <input type="checkbox" id="Electronics" name="skills" value="Electronics">
+                <label for="Electronics">Electronics</label><br>
+                <input type="checkbox" id="CompNet" name="skills" value="Computer Networks">
+                <label for="CompNet">Computer Networks</label><br>
+                <input type="checkbox" id="Telecommunications" name="skills" value="Telecommunications">
+                <label for="Telecommunications">Telecommunications</label><br>
+                <input type="checkbox" id="Biomedical" name="skills" value="Biomedical Instrumentation">
+                <label for="Biomedical">Biomedical Instrumentation</label><br>
+                <input type="checkbox" id="AI" name="skills" value="Artificial Intelligence / Machine Learning">
+                <label for="AI">Artificial Intelligence / Machine Learning</label><br>
+                <input type="checkbox" id="Signals" name="skills" value="Signal Processing">
+                <label for="Signals">Signal Processing</label><br>
+            </fieldset>
+
+            <label for="language">Primary Programming Language:</label>
+            <input list="langue" id="language" name="language" placeholder="Start typing..."><br>
+            <datalist id="langue">
+                <option value="Python">
+                <option value="Java">
+                <option value="C">
+                <option value="C++">
+                <option value="JavaScript">
+                <option value="MATLAB">
+            </datalist>
+
+            <label for="software">Engineering Software Used:</label>
+            <select multiple id="software" name="software" required>
+                <option value="MATLAB">MATLAB</option>
+                <option value="Simulink">Simulink</option>
+                <option value="LabView">LabView</option>
+                <option value="LTspice">LTspice</option>
+                <option value="Vivado">Vivado</option>
+                <option value="SolidWorks">SolidWorks</option>
+                <option value="AutoCad">AutoCad</option>
+                <option value="Proteus">Proteus</option>
+                <option value="Multisim">Multisim</option>
+            </select>
+            <p>Hold Ctrl(Windows) or Command (Mac) to Select several options</p>
+        </fieldset>
+
+        <fieldset>
+            <legend>4. Final Year Project</legend>
+            <label for="project_title">Proposed Project Title:</label>
+            <input type="text" id="project_title" name="project_title" placeholder="Enter a tentative project title"><br>
+            <label for="project_area">Preferred Project Area:</label>
+            <select id="project_area" name="project_area">
+                <optgroup label="Computer Engineering">
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Web Applications">Web Applications</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Internet of Things">Internet of Things</option>
+                </optgroup>
+                <optgroup label="Electrical Engineering">
+                    <option value="Power Systems">Power Systems</option>
+                    <option value="Renewable Energy">Renewable Energy</option>
+                    <option value="Control Systems">Control Systems</option>
+                    <option value="Embedded Systems">Embedded Systems</option>
+                </optgroup>
+                <optgroup label="Biomedical Engineering">
+                    <option value="Medical Imaging">Medical Imaging</option>
+                    <option value="Biosensors">Biosensors</option>
+                    <option value="Medical Devices">Medical Devices</option>
+                    <option value="Biomechanics">Biomechanics</option>
+                </optgroup>
+                <optgroup label="Telecommunications Engineering">
+                    <option value="Wireless Communications">Wireless Communications</option>
+                    <option value="5G/6G Networks">5G/6G Networks</option>
+                    <option value="Network Security">Network Security</option>
+                    <option value="Satellite Communications">Satellite Communications</option>
+                </optgroup>
+            </select><br>
+            <label for="description">Brief Project Description:</label>
+            <textarea id="description" name="description" placeholder="Describe the problem, proposed solution, and expected outcome..."></textarea><br>
+            <label for="team_size">Preferred Team Size:</label>
+            <input type="number" id="team_size" name="team_size" min="2" step="1" value="2"><br>
+            <label for="project_color">Choose a color for your project dashboard:</label>
+            <input type="color" id="project_color" name="project_color" value="#0000FF"><br>
+            <label for="meeting_date">Preferred Meeting Date:</label>
+            <input type="date" id="meeting_date" name="meeting_date"><br>
+            <label for="meeting_time">Preferred Meeting Time:</label>
+            <input type="time" id="meeting_time" name="meeting_time"><br>
+        </fieldset>
+        <label for="confirmation">
+            <input type="checkbox" id="confirmation" name="confirmation" required>I confirm that the information provided is accurate.
+        </label><br>
+        <input type="submit" value="Submit Profile">
+        <input type="reset" value="Clear Form">
+    </form>
+
+{% endblock %}
