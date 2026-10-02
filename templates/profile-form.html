@@ -1,6 +1,9 @@
 {% extends "nav-base.html" %}
 
 {% block title %}Engineering Student Profile{% endblock %}
+{% block header %}
+    <h1>Web Programming Portfolio</h1>
+{% endblock %}
 {% block head %}
  <link rel="stylesheet"
  href="{{ url_for('static', filename='form_style.css') }}"/>
@@ -19,19 +22,20 @@
         <fieldset>
             <legend>1. Personal Information</legend>
             <label for="student_id">Student ID:</label>
-            <input type="text" id="student_id" name="student_id" placeholder="202400007" pattern="[0-9]{9}" required><br>
+            <input type="text" id="student_id" name="student_id" placeholder="202400007" pattern="[0-9]{9}"  title="Student ID must contain exactly 9 digits." required>
             <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" placeholder="First name and Last name" required><br>
+            <input type="text" id="fullname" name="fullname" placeholder="First name and Last name" required>
             <label for="email">USEK Email:</label>
-            <input type="email" id="email" name="email" placeholder="student@net.usek.edu.lb" pattern="[A-Za-z.]+@net\.usek\.edu\.lb" required><br>
+            <input type="email" id="email" name="email" placeholder="student@net.usek.edu.lb" pattern="[A-Za-z.]+@net\.usek\.edu\.lb"  title="Enter a valid USEK email, for example: student@net.usek.edu.lb" required>
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="+961 76 123123" pattern="\+961 (03|70|71|76|78|79|81) [0-9]{6}"><br>
+            <span>🇱🇧 +961</span>
+            <input type="tel" id="phone" name="phone" placeholder="+961 76 123123" pattern="(03|70|71|76|78|79|81)[ ]?[0-9]{3}[ ]?[0-9]{3}" title="Enter a Lebanese number such as 76 123 123 or 76123123">
             <label for="birthdate">Date of Birth:</label>
-            <input type="date" id="birthdate" name="birthdate"><br>
+            <input type="date" id="birthdate" name="birthdate">
             <label for="portfolio">GitHub:</label>
-            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/username"><br>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/username">
             <label for="gin446">GIN446 website</label>
-            <input type="url" id="gin446" name="gin446" placeholder="https://projectname.onrender.com"><br>
+            <input type="url" id="gin446" name="gin446" placeholder="https://projectname.onrender.com">
         </fieldset>
 
         <fieldset>
@@ -46,9 +50,9 @@
             </select><br>
 
             <label for="gpa">Current GPA/100</label>
-            <input type="number" id="gpa" name="gpa" min="40" max="100" step="0.01" placeholder="85.50" required><br>
+            <input type="number" id="gpa" name="gpa" min="40" max="100" step="0.01" placeholder="85.50" required>
             <label for="credits">Credits completed</label>
-            <input type="number" id="credits" name="credits" min="0" required><br>
+            <input type="number" id="credits" name="credits" min="0" required>
 
             <fieldset>
                 <legend>Expected graduation</legend>
@@ -60,7 +64,7 @@
                 <label for="graduation_Fall">Fall</label>
             </fieldset>
             <label for="graduation_month">Expected Graduation Month & Year</label>
-            <input type="month" id="graduation_month" name="graduation_month" required><br>
+            <input type="month" id="graduation_month" name="graduation_month" required>
             <fieldset>
                 <legend>Have you completed an engineering internship?</legend>
                 <input type="radio" id="internship_completed_yes" name="internship_completed" value="Yes" required>
@@ -75,25 +79,25 @@
             <fieldset>
                 <legend>Select all areas in which you have experience:</legend>
                 <input type="checkbox" id="Programming" name="skills" value="Programming">
-                <label for="Programming">Programming</label><br>
+                <label for="Programming">Programming</label>
                 <input type="checkbox" id="Embedded" name="skills" value="Embedded Systems">
-                <label for="Embedded">Embedded Systems</label><br>
+                <label for="Embedded">Embedded Systems</label>
                 <input type="checkbox" id="Electronics" name="skills" value="Electronics">
-                <label for="Electronics">Electronics</label><br>
+                <label for="Electronics">Electronics</label>
                 <input type="checkbox" id="CompNet" name="skills" value="Computer Networks">
-                <label for="CompNet">Computer Networks</label><br>
+                <label for="CompNet">Computer Networks</label>
                 <input type="checkbox" id="Telecommunications" name="skills" value="Telecommunications">
-                <label for="Telecommunications">Telecommunications</label><br>
+                <label for="Telecommunications">Telecommunications</label>
                 <input type="checkbox" id="Biomedical" name="skills" value="Biomedical Instrumentation">
-                <label for="Biomedical">Biomedical Instrumentation</label><br>
+                <label for="Biomedical">Biomedical Instrumentation</label>
                 <input type="checkbox" id="AI" name="skills" value="Artificial Intelligence / Machine Learning">
-                <label for="AI">Artificial Intelligence / Machine Learning</label><br>
+                <label for="AI">Artificial Intelligence / Machine Learning</label>
                 <input type="checkbox" id="Signals" name="skills" value="Signal Processing">
-                <label for="Signals">Signal Processing</label><br>
+                <label for="Signals">Signal Processing</label>
             </fieldset>
 
             <label for="language">Primary Programming Language:</label>
-            <input list="langue" id="language" name="language" placeholder="Start typing..."><br>
+            <input list="langue" id="language" name="language" placeholder="Start typing...">
             <datalist id="langue">
                 <option value="Python">
                 <option value="Java">
@@ -121,7 +125,7 @@
         <fieldset>
             <legend>4. Final Year Project</legend>
             <label for="project_title">Proposed Project Title:</label>
-            <input type="text" id="project_title" name="project_title" placeholder="Enter a tentative project title"><br>
+            <input type="text" id="project_title" name="project_title" placeholder="Enter a tentative project title">
             <label for="project_area">Preferred Project Area:</label>
             <select id="project_area" name="project_area">
                 <optgroup label="Computer Engineering">
@@ -152,13 +156,13 @@
             <label for="description">Brief Project Description:</label>
             <textarea id="description" name="description" placeholder="Describe the problem, proposed solution, and expected outcome..."></textarea><br>
             <label for="team_size">Preferred Team Size:</label>
-            <input type="number" id="team_size" name="team_size" min="2" step="1" value="2"><br>
+            <input type="number" id="team_size" name="team_size" min="2" step="1" value="2">
             <label for="project_color">Choose a color for your project dashboard:</label>
-            <input type="color" id="project_color" name="project_color" value="#0000FF"><br>
+            <input type="color" id="project_color" name="project_color" value="#0000FF">
             <label for="meeting_date">Preferred Meeting Date:</label>
-            <input type="date" id="meeting_date" name="meeting_date"><br>
+            <input type="date" id="meeting_date" name="meeting_date">
             <label for="meeting_time">Preferred Meeting Time:</label>
-            <input type="time" id="meeting_time" name="meeting_time"><br>
+            <input type="time" id="meeting_time" name="meeting_time">
         </fieldset>
         <label for="confirmation">
             <input type="checkbox" id="confirmation" name="confirmation" required>I confirm that the information provided is accurate.

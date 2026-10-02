@@ -6,21 +6,21 @@
     <title>{% block title %}My Web Programming Portfolio{% endblock %}</title> <!--This can be different in every page-->
     <link rel="stylesheet"
             href="{{ url_for('static', filename='style.css') }}" />  <!--This is connect my html to the style.css sheet -->
-    <rel="stylesheet"
+    <link rel="stylesheet"
         href="{{ url_for('static', filename='my_styles.css') }}" />
     {% block head %}{% endblock %}
 </head>
 
 <body>
     <header>
-    <img src="{{ url_for('static', filename='Logo.png') }}"
-         alt="Globe logo"
-         class="site-logo"> <!--For Css to recognize it and use it, there are other ways, like using ids but using class is easier since it's not unique + no priority-->
+        <img src="{{ url_for('static', filename='logo.png') }}"
+            alt="Globe logo"
+            class="site-logo"> <!--For Css to recognize it and use it, there are other ways, like using ids but using class is easier since it's not unique + no priority-->
 
-    {% block header %}{% endblock %}
-</header>
+        {% block header %}{% endblock %}
+    </header>
     {% block navigation %}{% endblock %}
-    <main>{% block content %}{% endblock %}</main>
+    <main> {% block content %}{% endblock %} </main>
 
     <footer>
         <p>Web Programming — built with Flask and deployed on Render.</p>

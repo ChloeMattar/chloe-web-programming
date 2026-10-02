@@ -1,0 +1,591 @@
+{% extends "nav-base.html" %}
+
+{% block title %}Web Programming Research{% endblock %}
+{% block header %} <h1>Web Programming Research</h1> {% endblock %}
+{% block content %}
+        <section id="css-at-rules">
+
+            <h2>CSS At-Rules</h2>
+
+            <p>
+                CSS at-rules are special instructions that tell the browser how CSS should behave.
+                They always begin with the @ symbol.
+            </p>
+
+            <p>
+                They are used for different purposes such as importing stylesheets,
+                creating responsive layouts, defining animations, loading custom fonts,
+                and checking whether a browser supports a CSS feature.
+            </p>
+
+            <h3>Common CSS At-Rules</h3>
+
+            <article>
+                <h4>@import</h4>
+
+                <p>
+                    Used to import another CSS stylesheet into the current stylesheet.
+                </p>
+
+                <pre><code>@import "style.css";</code></pre> <!--Code was added for semantic reasons, it could be easily removed-->
+            </article>
+
+            <article>
+                <h4>@media</h4>
+
+                <p>
+                    Used to apply CSS only when certain conditions are true.
+                    It is commonly used for responsive design.
+                </p>
+
+                <pre><code>@media (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}</code></pre>
+            </article>
+
+            <article>
+                <h4>@font-face</h4>
+
+                <p>
+                    Used to load and use a custom font.
+                </p>
+
+                <pre><code>@font-face {
+    font-family: "MyFont";
+    src: url("myfont.woff2");
+}</code></pre>
+            </article>
+
+            <article>
+                <h4>@keyframes</h4>
+
+                <p>
+                    Used to define the different stages of a CSS animation.
+                </p>
+
+                <pre><code>@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}</code></pre>
+            </article>
+
+            <article>
+                <h4>@supports</h4>
+
+                <p>
+                    Used to apply CSS only if the browser supports a specific CSS feature.
+                </p>
+
+                <pre><code>@supports (display: grid) {
+    .container {
+        display: grid;
+    }
+}</code></pre>
+            </article>
+
+            <h3>Other CSS At-Rules</h3>
+
+            <ul>
+                <li>
+                    <h4>@container</h4>
+                    <p>
+                        Used to apply styles based on the size or characteristics
+                        of a container instead of the whole screen.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@layer</h4>
+                    <p>
+                        Used to organize CSS rules into layers and control
+                        their priority in the cascade.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@namespace</h4>
+                    <p>
+                        Used to define XML namespaces in a stylesheet.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@property</h4>
+                    <p>
+                        Used to define custom CSS properties with specific types
+                        and default values.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@scope</h4>
+                    <p>
+                        Used to limit CSS rules to a specific part of the document.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@starting-style</h4>
+                    <p>
+                        Used to define the starting style of an element before
+                        a transition begins.
+                    </p>
+                </li>
+
+                <li>
+                    <h4>@counter-style</h4>
+                    <p>
+                        Used to create custom styles for counters and list markers.
+                    </p>
+                </li>
+            </ul>
+
+            <h3>Resource</h3>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules" target="_blank">
+                MDN - CSS At-Rules
+            </a>
+
+        </section>
+
+
+        <section id="button-input">
+
+            <h2>&lt;button&gt; vs &lt;input type="button"&gt;</h2>
+
+            <p>
+                Both are used to create clickable buttons in HTML,
+                but they are not exactly the same.
+            </p>
+
+            <article>
+
+                <h3>&lt;button&gt;</h3>
+
+                <p>
+                    The &lt;button&gt; element can contain text and other HTML elements
+                    inside it, such as icons, images, or spans.
+                </p>
+
+                <h4>Example</h4>
+
+                <pre><code>&lt;button&gt;Click Me&lt;/button&gt;</code></pre>
+
+                <p>
+                    It can also have different types:
+                </p>
+
+                <pre><code>&lt;button type="button"&gt;Button&lt;/button&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;button type="reset"&gt;Reset&lt;/button&gt;</code></pre>
+
+                <h4>Advantages</h4>
+
+                <ul>
+                    <li>Can contain HTML content</li>
+                    <li>Easier to style</li>
+                    <li>More flexible</li>
+                    <li>Can be used as a normal button, submit button, or reset button</li>
+                </ul>
+
+            </article>
+
+            <article>
+
+                <h3>&lt;input type="button"&gt;</h3>
+
+                <p>
+                    The &lt;input type="button"&gt; element creates a button
+                    using the value attribute to define its text.
+                </p>
+
+                <h4>Example</h4>
+
+                <pre><code>&lt;input type="button" value="Click Me"&gt;</code></pre>
+
+                <h4>Advantages</h4>
+
+                <ul>
+                    <li>Simple to use</li>
+                    <li>Useful when only a basic text button is needed</li>
+                </ul>
+
+                <h4>Limitations</h4>
+
+                <ul>
+                    <li>Cannot contain HTML elements inside it</li>
+                    <li>The button text must be placed inside the value attribute</li>
+                    <li>Less flexible than &lt;button&gt;</li>
+                </ul>
+
+            </article>
+
+            <h3>Comparison</h3>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>&lt;button&gt;</th>
+                    <th>&lt;input type="button"&gt;</th>
+                </tr>
+
+                <tr>
+                    <td>Button text</td>
+                    <td>Placed between opening and closing tags</td>
+                    <td>Placed inside the value attribute</td>
+                </tr>
+
+                <tr>
+                    <td>HTML content inside</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+
+                <tr>
+                    <td>Flexibility</td>
+                    <td>More flexible</td>
+                    <td>Less flexible</td>
+                </tr>
+
+                <tr>
+                    <td>Common use</td>
+                    <td>Styled or content-rich buttons</td>
+                    <td>Simple text buttons</td>
+                </tr>
+            </table>
+
+            <h3>Main Difference</h3>
+
+            <p>
+                &lt;button&gt; can contain HTML content between its opening and closing tags,
+                while &lt;input type="button"&gt; is a self-contained element
+                and uses the value attribute for its text.
+            </p>
+
+            <p>
+                In general, &lt;button&gt; is more flexible and is commonly preferred
+                when more styling or content is needed.
+            </p>
+
+            <h3>Resources</h3>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button" target="_blank">
+                MDN - &lt;button&gt;
+            </a>
+            <br>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/button" target="_blank">
+                MDN - &lt;input type="button"&gt;
+            </a>
+
+        </section>
+
+
+        <section id="datalist-select">
+
+            <h2>&lt;datalist&gt; vs &lt;select&gt;</h2>
+
+            <p>
+                Both &lt;datalist&gt; and &lt;select&gt; provide a list of options,
+                but they work differently.
+            </p>
+
+            <article>
+
+                <h3>&lt;datalist&gt;</h3>
+
+                <p>
+                    The &lt;datalist&gt; element provides suggestions for an
+                    &lt;input&gt; element.
+                </p>
+
+                <p>
+                    The user can either:
+                </p>
+
+                <ul>
+                    <li>Choose one of the suggested options</li>
+                    <li>Type their own value</li>
+                </ul>
+
+                <p>
+                    The &lt;input&gt; must use the list attribute,
+                    and its value must match the id of the &lt;datalist&gt;.
+                </p>
+
+                <h4>Example</h4>
+
+                <pre><code>&lt;input list="browsers" name="browser"&gt;
+
+&lt;datalist id="browsers"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Edge"&gt;
+    &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</code></pre>
+
+                <p>
+                    The user can type in the input and matching suggestions will appear.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>&lt;select&gt;</h3>
+
+                <p>
+                    The &lt;select&gt; element creates a drop-down list.
+                    The user normally has to choose one of the options provided.
+                </p>
+
+                <h4>Example</h4>
+
+                <pre><code>&lt;select name="browser"&gt;
+    &lt;option value="chrome"&gt;Chrome&lt;/option&gt;
+    &lt;option value="firefox"&gt;Firefox&lt;/option&gt;
+    &lt;option value="edge"&gt;Edge&lt;/option&gt;
+    &lt;option value="safari"&gt;Safari&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+            </article>
+
+            <h3>Comparison</h3>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>&lt;datalist&gt;</th>
+                    <th>&lt;select&gt;</th>
+                </tr>
+
+                <tr>
+                    <td>Used with an input</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+
+                <tr>
+                    <td>Provides suggestions</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+
+                <tr>
+                    <td>User can type a custom value</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+
+                <tr>
+                    <td>User chooses from predefined options</td>
+                    <td>Optional</td>
+                    <td>Yes</td>
+                </tr>
+            </table>
+
+            <h3>Main Difference</h3>
+
+            <p>
+                &lt;datalist&gt; provides suggestions while still allowing free input.
+            </p>
+
+            <p>
+                &lt;select&gt; provides a fixed list of predefined choices.
+            </p>
+
+            <h3>Resource</h3>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist" target="_blank">
+                MDN - &lt;datalist&gt;
+            </a>
+
+        </section>
+
+
+        <section id="javascript">
+
+            <h2>JavaScript, JScript and ECMAScript</h2>
+            <p>
+                ECMAScript is the standard that defines how the language should work,
+                JavaScript is the most common implementation of that standard,
+                and JScript is Microsoft's older implementation.
+            </p>
+            <article>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    JavaScript is a programming language mainly used to make web pages interactive.
+                </p>
+
+                <p>
+                    It can be used to:
+                </p>
+
+                <ul>
+                    <li>Respond to user actions</li>
+                    <li>Change HTML content</li>
+                    <li>Modify CSS styles</li>
+                    <li>Validate forms</li>
+                    <li>Create animations</li>
+                    <li>Communicate with servers</li>
+                </ul>
+
+                <h4>Example</h4>
+
+                <pre><code>document.getElementById("demo").innerHTML = "Hello";</code></pre>
+
+                <p>
+                    JavaScript was originally created by Brendan Eich in 1995 for Netscape.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>JScript</h3>
+
+                <p>
+                    JScript was Microsoft's implementation of JavaScript.
+                </p>
+
+                <p>
+                    It was introduced for Internet Explorer and was designed to be compatible
+                    with JavaScript, but it had some Microsoft-specific differences.
+                </p>
+
+                <p>
+                    JScript was mainly used in:
+                </p>
+
+                <ul>
+                    <li>Internet Explorer</li>
+                    <li>Windows scripting</li>
+                    <li>Older Microsoft web technologies</li>
+                </ul>
+
+                <p>
+                    Today, the term JScript is mostly historical,
+                    and modern browsers use JavaScript based on ECMAScript standards.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>ECMAScript</h3>
+
+                <p>
+                    ECMAScript is the official standard that defines how JavaScript should work.
+                </p>
+
+                <p>
+                    It describes things such as:
+                </p>
+
+                <ul>
+                    <li>Syntax</li>
+                    <li>Variables</li>
+                    <li>Functions</li>
+                    <li>Objects</li>
+                    <li>Classes</li>
+                    <li>Operators</li>
+                    <li>Control structures</li>
+                </ul>
+
+                <p>
+                    JavaScript is an implementation of the ECMAScript standard.
+                    New versions of ECMAScript introduce new JavaScript features.
+                </p>
+
+            </article>
+
+            <h3>ECMAScript Versions</h3>
+
+            <article>
+
+                <h4>ECMAScript 5</h4>
+
+                <pre><code>"use strict";</code></pre>
+
+            </article>
+
+            <article>
+
+                <h4>ECMAScript 6</h4>
+
+                <p>
+                    ECMAScript 6 is also called ES6 or ECMAScript 2015.
+                </p>
+
+                <pre><code>let name = "John";
+const age = 20;</code></pre>
+
+                <p>
+                    ES6 introduced many important features such as:
+                </p>
+
+                <ul>
+                    <li>let and const</li>
+                    <li>Arrow functions</li>
+                    <li>Classes</li>
+                    <li>Template literals</li>
+                    <li>Modules</li>
+                </ul>
+
+            </article>
+
+            <h3>Main Differences</h3>
+
+            <table>
+                <tr>
+                    <th>Technology</th>
+                    <th>Role</th>
+                </tr>
+
+                <tr>
+                    <td>JavaScript</td>
+                    <td>The programming language used by web developers</td>
+                </tr>
+
+                <tr>
+                    <td>JScript</td>
+                    <td>Microsoft's older implementation of JavaScript</td>
+                </tr>
+
+                <tr>
+                    <td>ECMAScript</td>
+                    <td>The standard that defines the rules and features of JavaScript</td>
+                </tr>
+            </table>
+
+            <h3>In Short</h3>
+
+            <ul>
+                <li>ECMAScript = the standard</li>
+                <li>JavaScript = the most common implementation of the standard</li>
+                <li>JScript = Microsoft's older implementation</li>
+            </ul>
+
+            <h3>Resources</h3>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+                MDN - JavaScript
+            </a>
+            <br>
+
+            <a href="https://tc39.es/ecma262/" target="_blank">
+                ECMAScript Specification
+            </a>
+
+        </section>
+
+{% endblock %}
