@@ -4051,9 +4051,6 @@ body:has(nav:not(.section-nav)) #resources > p > a::after {
    Mobile-first — profile.html stays untouched
    ========================================================= */
 
-body:has(.profile) > header {
-    display: none;
-}
 
 body:has(.profile) main,
 body:has(.profile) .profile {
