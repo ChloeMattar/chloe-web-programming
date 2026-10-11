@@ -52,6 +52,7 @@ def home():
         {"week": 3, "title": "Web Programming Research", "url": "/research"},
         {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
+        {"week": 6, "title": "JavaScript Form Validation", "url": "/profile-form-javascript"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -102,6 +103,10 @@ def submit_profile():
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
     return render_template("quiz.html")
+
+@app.route("/profile-form-javascript")
+def profile_form_javascript():
+    return render_template("profile-form-javascript.html")
 
 
 if __name__ == "__main__":

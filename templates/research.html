@@ -588,4 +588,156 @@ const age = 20;</code></pre>
 
         </section>
 
+<section id="nodelist-htmlcollection">
+
+    <h2>NodeList vs HTMLCollection</h2>
+
+    <p>
+        NodeList and HTMLCollection are both used in JavaScript
+        to store collections of nodes or elements from the DOM.
+        However, they have some important differences,
+        especially when the DOM changes.
+    </p>
+
+    <article>
+        <h3>NodeList</h3>
+
+        <p>
+            A NodeList is a collection of nodes.
+            It can contain elements, text nodes, and comments.
+        </p>
+
+        <p>
+            A NodeList can be static or live, depending on how it is created.
+        </p>
+
+        <h4>Example</h4>
+
+        <pre><code>const items = document.querySelectorAll("p");</code></pre>
+
+        <p>
+            querySelectorAll() returns a static NodeList.
+            This means that if new matching elements are added
+            to the DOM, the NodeList does not update automatically.
+        </p>
+
+        <p>
+            However, childNodes returns a live NodeList,
+            which updates automatically when child nodes change.
+        </p>
+
+        <pre><code>const nodes = document.body.childNodes;</code></pre>
+    </article>
+
+    <article>
+        <h3>HTMLCollection</h3>
+
+        <p>
+            An HTMLCollection is a collection of elements.
+            Unlike NodeList, it does not contain text nodes or comments.
+        </p>
+
+        <p>
+            An HTMLCollection is always live.
+            This means that it updates automatically when
+            matching elements are added or removed from the DOM.
+        </p>
+
+        <h4>Example</h4>
+
+        <pre><code>const items = document.getElementsByClassName("item");</code></pre>
+
+        <p>
+            If a new element with the class "item" is added,
+            the HTMLCollection automatically includes it.
+        </p>
+    </article>
+
+    <h3>Comparison</h3>
+
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>NodeList</th>
+            <th>HTMLCollection</th>
+        </tr>
+
+        <tr>
+            <td>Contains</td>
+            <td>Nodes, including elements and text nodes</td>
+            <td>Elements only</td>
+        </tr>
+
+        <tr>
+            <td>Dynamic (live)</td>
+            <td>Can be live or static</td>
+            <td>Always live</td>
+        </tr>
+
+        <tr>
+            <td>querySelectorAll()</td>
+            <td>Yes, static</td>
+            <td>No</td>
+        </tr>
+
+        <tr>
+            <td>getElementsByClassName()</td>
+            <td>No</td>
+            <td>Yes, live</td>
+        </tr>
+
+        <tr>
+            <td>forEach() method</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+    <h3>Example: DOM Changes</h3>
+
+    <pre><code>const staticList = document.querySelectorAll(".item");
+const liveCollection = document.getElementsByClassName("item");
+
+const newElement = document.createElement("p");
+newElement.className = "item";
+document.body.appendChild(newElement);</code></pre>
+
+    <p>
+        After adding the new element:
+    </p>
+
+    <ul>
+        <li>staticList keeps its original number of elements.</li>
+        <li>liveCollection automatically includes the new element.</li>
+    </ul>
+
+    <h3>Main Difference</h3>
+
+    <p>
+        HTMLCollection is always live and automatically reflects
+        changes in the DOM.
+    </p>
+
+    <p>
+        NodeList can be static or live.
+        querySelectorAll() returns a static NodeList,
+        while childNodes returns a live NodeList.
+    </p>
+
+    <h3>Resources</h3>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList"
+       target="_blank">
+        MDN - NodeList
+    </a>
+
+    <br>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection"
+       target="_blank">
+        MDN - HTMLCollection
+    </a>
+
+</section>
+
 {% endblock %}

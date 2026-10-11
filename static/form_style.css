@@ -682,3 +682,223 @@ main > form input[type="reset"]:active {
         max-width: 860px;
     }
 }
+
+/* Keep the fixed review dialog anchored to the viewport.
+   The site's page entrance animation leaves a transform on main,
+   which otherwise becomes the containing block for fixed children. */
+body:has(#reviewPanel.open) main {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* Week 6 review panel only: viewport overlay and Dusty Blue palette. */
+body:has(#reviewPanel.open)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(22, 38, 59, 0.66);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    animation: reviewBackdropIn 240ms ease-out both;
+}
+
+#reviewPanel,
+#reviewPanel * {
+    box-sizing: border-box;
+}
+
+#reviewPanel {
+    display: none;
+}
+
+#reviewPanel.open {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    width: min(720px, calc(100vw - 1.25rem));
+    max-height: calc(100vh - 1.25rem);
+    max-height: calc(100dvh - 1.25rem);
+    margin: 0;
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #c8dceb 0%, #e0eaf3 46%, #d3e3ef 100%);
+    color: var(--color-text);
+    border: 2px solid #a0b8cc;
+    border-top: 7px solid var(--dusty-blue, #7d91a6);
+    border-radius: 12px;
+    box-shadow: 0 24px 75px rgba(16, 32, 52, 0.40);
+    animation: reviewPanelIn 260ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+#reviewPanel > h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0.45rem 0.55rem 0.85rem;
+    color: #273e58;
+    border-bottom: 2px solid #9cb6cb;
+    font-size: clamp(1.45rem, 5vw, 1.9rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+#reviewContent {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+}
+
+#reviewContent > p,
+#reviewContent > ul {
+    min-width: 0;
+    margin: 0;
+    padding: 0.75rem 0.85rem;
+    overflow-wrap: anywhere;
+    line-height: 1.55;
+    background: #f7fafd;
+    border: 1px solid #bfd1df;
+    /* Uniform pale blue outline, without a left accent bar. */
+    border-radius: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(44, 69, 92, 0.07);
+}
+
+/* Groups match the existing JavaScript-generated field order. */
+#reviewContent > p:nth-child(1),
+#reviewContent > p:nth-child(8),
+#reviewContent > p:nth-child(14),
+#reviewContent > p:nth-child(18) {
+    margin-top: 0.55rem;
+    border-top: 2px solid #8faec5;
+}
+
+#reviewContent > p:nth-child(1)::before,
+#reviewContent > p:nth-child(8)::before,
+#reviewContent > p:nth-child(14)::before,
+#reviewContent > p:nth-child(18)::before {
+    display: block;
+    margin: -0.75rem -0.85rem 0.7rem;
+    padding: 0.8rem 0.85rem;
+    color: #fff;
+    background: linear-gradient(90deg, #446785, #7697b2);
+    border-radius: 4px 4px 0 0;
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+#reviewContent > p:nth-child(1)::before { content: "01  Personal Information"; }
+#reviewContent > p:nth-child(8)::before { content: "02  Academic Information"; }
+#reviewContent > p:nth-child(14)::before { content: "03  Technical Background"; }
+#reviewContent > p:nth-child(18)::before { content: "04  Final Year Project"; }
+
+#reviewContent > h3 {
+    margin: 0.55rem 0 0;
+    padding: 0.65rem 0.8rem;
+    color: #294560;
+    background: #c1d6e6;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+#reviewContent > ul {
+    padding-left: 2rem;
+    background: #eaf3f9;
+}
+
+#reviewContent > ul > li + li {
+    margin-top: 0.2rem;
+}
+
+#reviewPanel > button {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0.8rem 0.6rem;
+    border: 2px solid #293f59;
+    border-radius: 5px;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 750;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+#editButton {
+    color: #293f59;
+    background: #eaf2f8;
+}
+
+#confirmButton {
+    color: #fff;
+    background: #293f59;
+}
+
+#editButton:hover,
+#editButton:focus-visible {
+    background: #c3d9e9;
+}
+
+#confirmButton:hover,
+#confirmButton:focus-visible {
+    background: #446785;
+}
+
+#reviewPanel > button:focus-visible {
+    outline: 3px solid #7d91a6;
+    outline-offset: 3px;
+}
+
+@media (min-width: 600px) {
+    #reviewPanel.open {
+        gap: 0.85rem;
+        padding: 1.35rem 1.6rem;
+    }
+
+    #reviewContent {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    #reviewContent > p:nth-child(1),
+    #reviewContent > p:nth-child(8),
+    #reviewContent > p:nth-child(14),
+    #reviewContent > p:nth-child(18),
+    #reviewContent > h3,
+    #reviewContent > ul {
+        grid-column: 1 / -1;
+    }
+}
+
+@keyframes reviewPanelIn {
+    from { opacity: 0; transform: translate(-50%, -47%) scale(0.97); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes reviewBackdropIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(#reviewPanel.open)::before,
+    #reviewPanel.open {
+        animation: none;
+    }
+
+    #reviewPanel > button {
+        transition: none;
+    }
+}
