@@ -17,6 +17,9 @@ import json
 from flask import Flask
 from quiz_api import db, Question, database_uri
 
+#postgresql://quiz_xuas_user:um7eKl3oTE8hcUDQ7V9vQO4g7MotNEZh@dpg-db71gjrncjis73f6ucj0-a/quiz_xuas
+#postgresql://quiz_xuas_user:um7eKl3oTE8hcUDQ7V9vQO4g7MotNEZh@dpg-db71gjrncjis73f6ucj0-a.oregon-postgres.render.com/quiz_xuas
+
 
 QUESTIONS = [
     {

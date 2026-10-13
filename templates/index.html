@@ -1,6 +1,29 @@
-{% extends "portfolio-base.html" %}
-
+{% extends "base.html" %}
 {% block title %} Home {% endblock %}
+
+
+{% block header %}
+    <h1>Web Programming Portfolio
+    <span class="portfolio-name">Chloe Mattar</span>
+    </h1>
+    <p>A live site that grows one page or feature every week.</p>
+{% endblock %}
+
+{% block header_image %}
+    <img class="header-background"
+         src="{{ url_for('static', filename='header-background.jpg') }}"
+         alt="">
+{% endblock %}
+
+
+{% block navigation %}
+<nav class="home-nav">
+    <a href="{{ url_for('home') }}#weekly-work">Weekly Work</a>
+    <a href="{{ url_for('about') }}">About Me</a>
+</nav>
+{% endblock %}
+
+
 
 {% block content %}
     <section id="weekly-work">
