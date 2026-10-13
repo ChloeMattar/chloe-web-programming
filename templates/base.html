@@ -6,12 +6,11 @@
     <title>{% block title %}My Web Programming Portfolio{% endblock %}</title> <!--This can be different in every page-->
     <link rel="stylesheet"
             href="{{ url_for('static', filename='style.css') }}" />  <!--This is connect my html to the style.css sheet -->
-    <link rel="stylesheet"
-        href="{{ url_for('static', filename='my_styles.css') }}" />
     {% block head %}{% endblock %}
 </head>
 
 <body>
+    {% block header_image %}{% endblock %}
     <header>
         <img src="{{ url_for('static', filename='logo.png') }}"
             alt="Globe logo"

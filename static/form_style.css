@@ -1,10 +1,28 @@
-body:has(main > form) header {
-    display: block;
-    height: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
+/* Form background; reuse the shared pulse without duplicating keyframes. */
+body:has(main > form) {
+    --scene-blue: 45, 150, 225;
+    --orb-x: 90%;
+    --orb-y: 12%;
+    --small-x: 12%;
+    --small-y: 72%;
+    --wave-x: 0%;
+    background:
+        radial-gradient(circle at var(--orb-x, 88%) var(--orb-y, 14%), rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 calc(var(--orb-size, 3rem) - 2px), rgba(255, 255, 255, var(--shape-glow)) var(--orb-size, 3rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.4)) calc(var(--orb-size, 3rem) + 3px), transparent calc(var(--orb-size, 3rem) + 1.5rem)),
+        radial-gradient(circle at calc(var(--orb-x, 88%) - 3rem) calc(var(--orb-y, 14%) + 2rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at var(--small-x, 8%) var(--small-y, 76%), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.75)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at 100% 58%, rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 3.5rem, transparent 4.75rem),
+        radial-gradient(ellipse 110% 85% at var(--wave-x, 12%) var(--wave-y, 120%), transparent 0 60%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 63% 75%, transparent 79%),
+        radial-gradient(ellipse 100% 90% at 105% 115%, transparent 0 56%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.5)) 60% 72%, transparent 77%),
+        linear-gradient(135deg, var(--scene-base, #eaf3fb), #f7fafc 60%, #edf5fc);
+    background-attachment: fixed;
+    animation: shape-glow 7s ease-in-out infinite;
+}
+
+body:has(#reviewPanel) {
+    --orb-x: 10%;
+    --orb-y: 20%;
+    --small-x: 94%;
+    --wave-x: 85%;
 }
 
 body:has(main > form) main {
@@ -19,36 +37,14 @@ main > h2 + p {
     width: 100vw;
     max-width: none;
     margin-left: calc(50% - 50vw);
-    background: linear-gradient(135deg, #dceaf4 0%, #e7f0f6 55%, #edf4fa 100%);
+    background: linear-gradient(135deg, var(--color-blue-hover) 0%, var(--color-blue) 55%, var(--color-blue) 100%);
     border: 0;
     border-radius: 0;
     color: var(--color-primary-dark);
 }
 
 main > h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 1.15rem 0.9rem 0.8rem;
-    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.92);
-    font-size: clamp(1.65rem, 7vw, 2.1rem);
     line-height: 1.08;
-    letter-spacing: -0.025em;
-    font-weight: 800;
-}
-
-main > h2::after {
-    content: "";
-    display: block;
-    width: min(250px, 70vw);
-    height: 3px;
-    margin-top: 0.8rem;
-    background: linear-gradient(
-        90deg,
-        rgba(125, 145, 166, 0.92) 0%,
-        rgba(125, 145, 166, 0.44) 55%,
-        rgba(125, 145, 166, 0.06) 100%
-    );
-    border-radius: var(--radius-pill);
 }
 
 main > h2 + p {
@@ -60,6 +56,7 @@ main > h2 + p {
     line-height: 1.78;
 }
 
+/* Form fields and controls */
 main > form {
     width: 100%;
     max-width: 900px;
@@ -72,7 +69,7 @@ main > form > fieldset {
     gap: 0.45rem;
     margin: 0 0 1.35rem;
     padding: 1rem 0.85rem 0.95rem;
-    background: var(--color-surface);
+    background: var(--color-background);
     border: 0;
     border-radius: 2px;
     box-shadow: var(--shadow-soft);
@@ -106,16 +103,10 @@ main > form > fieldset > legend::after {
     width: 100%;
     height: 2px;
     margin-top: 0.3rem;
-    background: linear-gradient(
-        90deg,
-        var(--color-primary) 0%,
-        var(--dusty-blue) 58%,
-        rgba(99, 143, 179, 0) 100%
-    );
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary) 58%, rgba(99, 143, 179, 0) 100%);
 }
 
 main > form > fieldset > br,
-main > form > fieldset:nth-of-type(3) > fieldset > br,
 main > form > label[for="confirmation"] + br {
     display: none;
 }
@@ -124,9 +115,7 @@ main > form label {
     display: block;
     width: 100%;
     min-width: 0;
-    margin: 0.6rem 0 0.25rem;
     color: var(--color-text);
-    font-weight: 700;
     line-height: 1.4;
 }
 
@@ -163,15 +152,12 @@ main > form textarea {
     min-height: 42px;
     padding: 0.58rem 0.7rem;
     color: var(--color-primary-dark);
-    background: #fff;
+    background: #ffffff;
     border: 1px solid rgba(99, 143, 179, 0.30);
     border-radius: 2px;
     font: inherit;
     line-height: 1.4;
-    transition:
-        border-color var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background-color var(--transition-fast);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
 
 main > form > fieldset:first-of-type > input,
@@ -203,7 +189,6 @@ main > form > fieldset:first-of-type > input:hover {
 }
 
 main > form textarea {
-    min-height: 110px;
     resize: vertical;
 }
 
@@ -212,7 +197,6 @@ main > form > fieldset:nth-of-type(4) > textarea {
 }
 
 main > form select[multiple] {
-    min-height: 150px;
     padding: 0.4rem;
 }
 
@@ -229,24 +213,17 @@ main > form select:focus,
 main > form textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 0 0 3px rgba(99, 143, 179, 0.16);
 }
 
 main > form > fieldset:first-of-type > input:focus {
-    border-color: var(--dusty-blue);
+    border-color: var(--color-primary);
     box-shadow: 0 0 0 2px rgba(99, 143, 179, 0.12);
 }
 
-main > form input::placeholder,
-main > form textarea::placeholder {
-    color: var(--color-muted);
-}
-
 main > form > fieldset > fieldset {
-    margin: 0.8rem 0;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.58);
     border: 1px solid var(--color-border);
     border-radius: 2px;
 }
@@ -267,9 +244,7 @@ main > form > fieldset:nth-of-type(3) > fieldset {
 main > form > fieldset > fieldset > legend {
     max-width: 100%;
     padding: 0 0.35rem 0.18rem 0;
-    color: var(--dusty-blue);
     background: transparent;
-    font-size: 0.9rem;
     font-weight: 800;
     line-height: 1.35;
 }
@@ -285,9 +260,6 @@ main > form > fieldset:nth-of-type(3) > fieldset > legend {
 }
 
 main > form > fieldset:nth-of-type(2) > fieldset label {
-    display: inline-block;
-    width: auto;
-    margin: 0.25rem 0.85rem 0.25rem 0.2rem;
     font-size: 0.86rem;
     font-weight: 700;
 }
@@ -319,23 +291,14 @@ main > form > fieldset > fieldset input[type="radio"]:checked + label {
 
 main > form > fieldset:nth-of-type(3) input[type="checkbox"][name="skills"] {
     margin: 0.3rem 0.35rem 0.3rem 0;
-    accent-color: var(--dusty-blue);
+    accent-color: var(--color-primary);
 }
 
 main > form input[type="checkbox"][name="skills"] + label {
-    display: inline-block;
-    width: auto;
-    margin: 0.22rem 0 0.22rem 0.15rem;
-    padding: 0.38rem 0.6rem;
-    background: #fff;
     border: 1px solid var(--color-border);
     border-radius: 2px;
     cursor: pointer;
-    transition:
-        background-color var(--transition-fast),
-        border-color var(--transition-fast),
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 main > form > fieldset:nth-of-type(3) input[type="checkbox"][name="skills"] + label {
@@ -371,10 +334,8 @@ main > form > fieldset:nth-of-type(3) input[type="checkbox"][name="skills"]:chec
 }
 
 main > form input[type="color"] {
-    width: 58px;
     height: 40px;
-    padding: 4px;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-radius: 2px;
     cursor: pointer;
@@ -387,10 +348,7 @@ main > form > fieldset:nth-of-type(4) > input[type="color"] {
 }
 
 main > form fieldset p {
-    margin: 0.35rem 0 0;
     color: var(--color-muted);
-    font-size: var(--font-size-small);
-    line-height: 1.45;
 }
 
 main > form > fieldset:nth-of-type(3) > p {
@@ -420,7 +378,7 @@ main > form > label[for="confirmation"] {
 main > form > label[for="confirmation"] input {
     flex: 0 0 auto;
     margin-top: 0.18rem;
-    accent-color: var(--dusty-blue);
+    accent-color: var(--color-primary);
 }
 
 main > form input[type="submit"],
@@ -433,11 +391,7 @@ main > form input[type="reset"] {
     font: inherit;
     font-weight: 800;
     cursor: pointer;
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background-color var(--transition-fast),
-        border-color var(--transition-fast);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 main > form input[type="submit"] {
@@ -449,7 +403,7 @@ main > form input[type="submit"] {
 
 main > form input[type="reset"] {
     color: var(--color-primary-dark);
-    background: #fff;
+    background: #ffffff;
     border: 1px solid var(--color-border);
 }
 
@@ -471,14 +425,10 @@ main > form input[type="reset"]:active {
     transform: translateY(0);
 }
 
+/* Responsive form layout */
 @media (min-width: 481px) {
     body:has(main > form) main {
         width: min(var(--content-width), calc(100% - 2rem));
-    }
-
-    main > h2 {
-        padding: 1.7rem max(1.4rem, calc((100vw - 100%) / 2 + 1.4rem)) 0.95rem;
-        font-size: 1.8rem;
     }
 
     main > h2 + p {
@@ -496,15 +446,14 @@ main > form input[type="reset"]:active {
 }
 
 @media (min-width: 761px) {
+    body:has(main > form) {
+        --orb-size: 4rem;
+    }
+
     body:has(main > form) main {
         width: min(var(--content-width), calc(100% - 3rem));
         margin-top: 0;
         padding-top: 0.8rem;
-    }
-
-    main > h2 {
-        padding: 2rem max(2rem, calc((100vw - 100%) / 2 + 2rem)) 1rem;
-        font-size: 2rem;
     }
 
     main > h2 + p {
@@ -540,7 +489,6 @@ main > form input[type="reset"]:active {
         display: inline-block;
         width: 225px;
         min-width: 225px;
-        margin: 0.42rem 0.8rem 0.42rem 0;
         vertical-align: middle;
     }
 
@@ -578,10 +526,6 @@ main > form input[type="reset"]:active {
         min-width: 0;
     }
 
-    main > form fieldset p {
-        margin-left: 241px;
-    }
-
     main > form > fieldset:nth-of-type(3) > p {
         margin-left: 0;
     }
@@ -590,35 +534,126 @@ main > form input[type="reset"]:active {
         width: fit-content;
     }
 
-    main > form > fieldset:first-of-type > label[for="student_id"] { grid-column: 1; grid-row: 2; }
-    main > form > fieldset:first-of-type > #student_id { grid-column: 1; grid-row: 3; }
-    main > form > fieldset:first-of-type > label[for="fullname"] { grid-column: 2; grid-row: 2; }
-    main > form > fieldset:first-of-type > #fullname { grid-column: 2; grid-row: 3; }
-    main > form > fieldset:first-of-type > label[for="email"] { grid-column: 1; grid-row: 4; }
-    main > form > fieldset:first-of-type > #email { grid-column: 1; grid-row: 5; }
-    main > form > fieldset:first-of-type > label[for="phone"] { grid-column: 2; grid-row: 4; }
-    main > form > fieldset:first-of-type > #phone { grid-column: 2; grid-row: 5; }
-    main > form > fieldset:first-of-type > label[for="birthdate"] { grid-column: 1; grid-row: 6; }
-    main > form > fieldset:first-of-type > #birthdate { grid-column: 1; grid-row: 7; }
-    main > form > fieldset:first-of-type > label[for="portfolio"] { grid-column: 2; grid-row: 6; }
-    main > form > fieldset:first-of-type > #portfolio { grid-column: 2; grid-row: 7; }
-    main > form > fieldset:first-of-type > label[for="gin446"] { grid-column: 1 / -1; grid-row: 8; }
-    main > form > fieldset:first-of-type > #gin446 { grid-column: 1 / -1; grid-row: 9; }
+    main > form > fieldset:first-of-type > label[for="student_id"] {
+        grid-column: 1;
+        grid-row: 2;
+    }
 
-    main > form > fieldset:nth-of-type(2) > label[for="major"] { grid-column: 1; grid-row: 2; }
-    main > form > fieldset:nth-of-type(2) > #major { grid-column: 1; grid-row: 3; }
-    main > form > fieldset:nth-of-type(2) > label[for="gpa"] { grid-column: 2; grid-row: 2; }
-    main > form > fieldset:nth-of-type(2) > #gpa { grid-column: 2; grid-row: 3; }
-    main > form > fieldset:nth-of-type(2) > label[for="credits"] { grid-column: 1; grid-row: 4; }
-    main > form > fieldset:nth-of-type(2) > #credits { grid-column: 1; grid-row: 5; }
+    main > form > fieldset:first-of-type > #student_id {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:first-of-type > label[for="fullname"] {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    main > form > fieldset:first-of-type > #fullname {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:first-of-type > label[for="email"] {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    main > form > fieldset:first-of-type > #email {
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    main > form > fieldset:first-of-type > label[for="phone"] {
+        grid-column: 2;
+        grid-row: 4;
+    }
+
+    main > form > fieldset:first-of-type > #phone {
+        grid-column: 2;
+        grid-row: 5;
+    }
+
+    main > form > fieldset:first-of-type > label[for="birthdate"] {
+        grid-column: 1;
+        grid-row: 6;
+    }
+
+    main > form > fieldset:first-of-type > #birthdate {
+        grid-column: 1;
+        grid-row: 7;
+    }
+
+    main > form > fieldset:first-of-type > label[for="portfolio"] {
+        grid-column: 2;
+        grid-row: 6;
+    }
+
+    main > form > fieldset:first-of-type > #portfolio {
+        grid-column: 2;
+        grid-row: 7;
+    }
+
+    main > form > fieldset:first-of-type > label[for="gin446"] {
+        grid-column: 1 / -1;
+        grid-row: 8;
+    }
+
+    main > form > fieldset:first-of-type > #gin446 {
+        grid-column: 1 / -1;
+        grid-row: 9;
+    }
+
+    main > form > fieldset:nth-of-type(2) > label[for="major"] {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    main > form > fieldset:nth-of-type(2) > #major {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:nth-of-type(2) > label[for="gpa"] {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    main > form > fieldset:nth-of-type(2) > #gpa {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:nth-of-type(2) > label[for="credits"] {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    main > form > fieldset:nth-of-type(2) > #credits {
+        grid-column: 1;
+        grid-row: 5;
+    }
+
     main > form > fieldset:nth-of-type(2) > fieldset:first-of-type {
         grid-column: 2;
         grid-row: 4 / 6;
         align-self: stretch;
     }
-    main > form > fieldset:nth-of-type(2) > label[for="graduation_month"] { grid-column: 1 / -1; grid-row: 6; }
-    main > form > fieldset:nth-of-type(2) > #graduation_month { grid-column: 1 / -1; grid-row: 7; }
-    main > form > fieldset:nth-of-type(2) > fieldset:last-of-type { grid-column: 1 / -1; grid-row: 8; }
+
+    main > form > fieldset:nth-of-type(2) > label[for="graduation_month"] {
+        grid-column: 1 / -1;
+        grid-row: 6;
+    }
+
+    main > form > fieldset:nth-of-type(2) > #graduation_month {
+        grid-column: 1 / -1;
+        grid-row: 7;
+    }
+
+    main > form > fieldset:nth-of-type(2) > fieldset:last-of-type {
+        grid-column: 1 / -1;
+        grid-row: 8;
+    }
 
     main > form > fieldset:nth-of-type(3) > fieldset {
         grid-column: 1 / -1;
@@ -661,20 +696,75 @@ main > form input[type="reset"]:active {
         grid-row: 5;
     }
 
-    main > form > fieldset:nth-of-type(4) > label[for="project_title"] { grid-column: 1; grid-row: 2; }
-    main > form > fieldset:nth-of-type(4) > #project_title { grid-column: 1; grid-row: 3; }
-    main > form > fieldset:nth-of-type(4) > label[for="project_area"] { grid-column: 2; grid-row: 2; }
-    main > form > fieldset:nth-of-type(4) > #project_area { grid-column: 2; grid-row: 3; }
-    main > form > fieldset:nth-of-type(4) > label[for="description"] { grid-column: 1 / -1; grid-row: 4; }
-    main > form > fieldset:nth-of-type(4) > #description { grid-column: 1 / -1; grid-row: 5; }
-    main > form > fieldset:nth-of-type(4) > label[for="team_size"] { grid-column: 1; grid-row: 6; }
-    main > form > fieldset:nth-of-type(4) > #team_size { grid-column: 1; grid-row: 7; }
-    main > form > fieldset:nth-of-type(4) > label[for="project_color"] { grid-column: 2; grid-row: 6; }
-    main > form > fieldset:nth-of-type(4) > #project_color { grid-column: 2; grid-row: 7; }
-    main > form > fieldset:nth-of-type(4) > label[for="meeting_date"] { grid-column: 1; grid-row: 8; }
-    main > form > fieldset:nth-of-type(4) > #meeting_date { grid-column: 1; grid-row: 9; }
-    main > form > fieldset:nth-of-type(4) > label[for="meeting_time"] { grid-column: 2; grid-row: 8; }
-    main > form > fieldset:nth-of-type(4) > #meeting_time { grid-column: 2; grid-row: 9; }
+    main > form > fieldset:nth-of-type(4) > label[for="project_title"] {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #project_title {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="project_area"] {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #project_area {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="description"] {
+        grid-column: 1 / -1;
+        grid-row: 4;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #description {
+        grid-column: 1 / -1;
+        grid-row: 5;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="team_size"] {
+        grid-column: 1;
+        grid-row: 6;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #team_size {
+        grid-column: 1;
+        grid-row: 7;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="project_color"] {
+        grid-column: 2;
+        grid-row: 6;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #project_color {
+        grid-column: 2;
+        grid-row: 7;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="meeting_date"] {
+        grid-column: 1;
+        grid-row: 8;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #meeting_date {
+        grid-column: 1;
+        grid-row: 9;
+    }
+
+    main > form > fieldset:nth-of-type(4) > label[for="meeting_time"] {
+        grid-column: 2;
+        grid-row: 8;
+    }
+
+    main > form > fieldset:nth-of-type(4) > #meeting_time {
+        grid-column: 2;
+        grid-row: 9;
+    }
 }
 
 @media (min-width: 1001px) {
@@ -729,12 +819,12 @@ body:has(#reviewPanel.open)::before {
     overflow-y: auto;
     overscroll-behavior: contain;
     transform: translate(-50%, -50%);
-    background: linear-gradient(145deg, #c8dceb 0%, #e0eaf3 46%, #d3e3ef 100%);
+    background: linear-gradient(145deg, #c3d9e9 0%, var(--color-blue-hover) 46%, #d6e3ec 100%);
     color: var(--color-text);
     border: 2px solid #a0b8cc;
-    border-top: 7px solid var(--dusty-blue, #7d91a6);
+    border-top: 7px solid var(--color-primary, #7d91a6);
     border-radius: 12px;
-    box-shadow: 0 24px 75px rgba(16, 32, 52, 0.40);
+    box-shadow: 0 24px 75px rgba(11, 34, 56, 0.40);
     animation: reviewPanelIn 260ms cubic-bezier(.2,.8,.2,1) both;
 }
 
@@ -742,8 +832,8 @@ body:has(#reviewPanel.open)::before {
     grid-column: 1 / -1;
     margin: 0;
     padding: 0.45rem 0.55rem 0.85rem;
-    color: #273e58;
-    border-bottom: 2px solid #9cb6cb;
+    color: #293f59;
+    border-bottom: 2px solid #a0b8cc;
     font-size: clamp(1.45rem, 5vw, 1.9rem);
     font-weight: 800;
     line-height: 1.2;
@@ -765,12 +855,12 @@ body:has(#reviewPanel.open)::before {
     padding: 0.75rem 0.85rem;
     overflow-wrap: anywhere;
     line-height: 1.55;
-    background: #f7fafd;
+    background: var(--color-background);
     border: 1px solid #bfd1df;
     /* Uniform pale blue outline, without a left accent bar. */
     border-radius: 5px;
     font-size: 0.9rem;
-    box-shadow: 0 2px 6px rgba(44, 69, 92, 0.07);
+    box-shadow: 0 2px 6px rgba(40, 67, 91, 0.07);
 }
 
 /* Groups match the existing JavaScript-generated field order. */
@@ -789,7 +879,7 @@ body:has(#reviewPanel.open)::before {
     display: block;
     margin: -0.75rem -0.85rem 0.7rem;
     padding: 0.8rem 0.85rem;
-    color: #fff;
+    color: #ffffff;
     background: linear-gradient(90deg, #446785, #7697b2);
     border-radius: 4px 4px 0 0;
     font-size: 0.88rem;
@@ -797,16 +887,26 @@ body:has(#reviewPanel.open)::before {
     letter-spacing: 0.02em;
 }
 
-#reviewContent > p:nth-child(1)::before { content: "01  Personal Information"; }
-#reviewContent > p:nth-child(8)::before { content: "02  Academic Information"; }
-#reviewContent > p:nth-child(14)::before { content: "03  Technical Background"; }
-#reviewContent > p:nth-child(18)::before { content: "04  Final Year Project"; }
+#reviewContent > p:nth-child(1)::before {
+    content: "01  Personal Information";
+}
+
+#reviewContent > p:nth-child(8)::before {
+    content: "02  Academic Information";
+}
+
+#reviewContent > p:nth-child(14)::before {
+    content: "03  Technical Background";
+}
+
+#reviewContent > p:nth-child(18)::before {
+    content: "04  Final Year Project";
+}
 
 #reviewContent > h3 {
     margin: 0.55rem 0 0;
     padding: 0.65rem 0.8rem;
-    color: #294560;
-    background: #c1d6e6;
+    background: #c3d9e9;
     border-radius: 4px;
     font-size: 0.95rem;
     font-weight: 800;
@@ -814,7 +914,7 @@ body:has(#reviewPanel.open)::before {
 
 #reviewContent > ul {
     padding-left: 2rem;
-    background: #eaf3f9;
+    background: var(--color-blue);
 }
 
 #reviewContent > ul > li + li {
@@ -838,11 +938,11 @@ body:has(#reviewPanel.open)::before {
 
 #editButton {
     color: #293f59;
-    background: #eaf2f8;
+    background: var(--color-blue);
 }
 
 #confirmButton {
-    color: #fff;
+    color: #ffffff;
     background: #293f59;
 }
 
@@ -893,6 +993,7 @@ body:has(#reviewPanel.open)::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    body:has(main > form),
     body:has(#reviewPanel.open)::before,
     #reviewPanel.open {
         animation: none;

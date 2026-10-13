@@ -40,6 +40,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+from quiz_api import init_quiz 
+init_quiz(app)
 
 @app.route("/")
 def home():
@@ -107,6 +109,10 @@ def quiz():
 @app.route("/profile-form-javascript")
 def profile_form_javascript():
     return render_template("profile-form-javascript.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":

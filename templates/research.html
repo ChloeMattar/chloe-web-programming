@@ -2,21 +2,35 @@
 
 {% block title %}Web Programming Research{% endblock %}
 {% block header %} <h1>Web Programming Research</h1> {% endblock %}
+{% block navigation %} 
+{{ super() }} <!--This is to keep to navigation in nav-base, and not create issues! -->
+<nav class="section-nav"> <!--We used class here for reusability purpose, first it was added because we can't have 2 nav so we needed to add a class. Also, this specific navigation style could be reusable in the future since the website is not finished to make it reusable I used class!-->
+    <a href="#css-at-rules">Css At Rules</a>
+    <a href="#button-input">Button and Input</a>
+    <a href="#datalist-select">Datalist and Select</a>
+    <a href="#javascript">Javascript</a>
+    <a href="#nodelist-htmlcollection">NodeList and Html Collection</a>
+</nav>
+{% endblock %}
 {% block content %}
         <section id="css-at-rules">
 
-            <h2>CSS At-Rules</h2>
+         
+            <div class="research-intro">
+                <div>
+                    <h2>CSS At-Rules</h2>
+                    <p> CSS at-rules are special instructions that tell the browser how CSS should behave.
+                        They always begin with the @ symbol.
+                    </p>
 
-            <p>
-                CSS at-rules are special instructions that tell the browser how CSS should behave.
-                They always begin with the @ symbol.
-            </p>
+                    <p> They are used for different purposes such as importing stylesheets,
+                     creating responsive layouts, defining animations, loading custom fonts,
+                    and checking whether a browser supports a CSS feature.
+                     </p>
+                </div>
 
-            <p>
-                They are used for different purposes such as importing stylesheets,
-                creating responsive layouts, defining animations, loading custom fonts,
-                and checking whether a browser supports a CSS feature.
-            </p>
+                    <img src="{{ url_for('static', filename='research-1.png') }}" alt="">
+                </div>
 
             <h3>Common CSS At-Rules</h3>
 
@@ -157,15 +171,19 @@
 
 
         <section id="button-input">
+            <div class="research-intro">
+                <div>
+                    <h2>&lt;button&gt; vs &lt;input type="button"&gt;</h2>
+                    
+                    <p> Both are used to create clickable buttons in HTML,
+                         but they are not exactly the same.
+                    </p>
+                </div>
 
-            <h2>&lt;button&gt; vs &lt;input type="button"&gt;</h2>
-
-            <p>
-                Both are used to create clickable buttons in HTML,
-                but they are not exactly the same.
-            </p>
-
-            <article>
+                    <img src="{{ url_for('static', filename='research-2.png') }}" alt="">
+                </div>
+              
+                <article>
 
                 <h3>&lt;button&gt;</h3>
 
@@ -289,14 +307,20 @@
 
 
         <section id="datalist-select">
-
-            <h2>&lt;datalist&gt; vs &lt;select&gt;</h2>
-
-            <p>
+            <div class="research-intro">
+                <div>
+                    <h2>&lt;datalist&gt; vs &lt;select&gt;</h2>
+                    
+                <p>
                 Both &lt;datalist&gt; and &lt;select&gt; provide a list of options,
                 but they work differently.
-            </p>
+                </p>
+                    
+                </div>
 
+                    <img src="{{ url_for('static', filename='research-3.png') }}" alt="">
+                </div>
+            
             <article>
 
                 <h3>&lt;datalist&gt;</h3>
@@ -411,13 +435,21 @@
 
 
         <section id="javascript">
-
-            <h2>JavaScript, JScript and ECMAScript</h2>
-            <p>
+            <div class="research-intro">
+                <div>
+                    <h2>JavaScript, JScript and ECMAScript</h2>
+                    
+                <p>
                 ECMAScript is the standard that defines how the language should work,
                 JavaScript is the most common implementation of that standard,
                 and JScript is Microsoft's older implementation.
-            </p>
+                </p>
+                    
+                </div>
+
+                    <img src="{{ url_for('static', filename='research-4.png') }}" alt="">
+                </div>
+          
             <article>
 
                 <h3>JavaScript</h3>
@@ -589,18 +621,21 @@ const age = 20;</code></pre>
         </section>
 
 <section id="nodelist-htmlcollection">
+      <div class="research-intro">
+                <div>
+                    <h2>NodeList vs HTMLCollection</h2>
+                 <p> NodeList and HTMLCollection are both used in JavaScript
+                    to store collections of nodes or elements from the DOM.
+                    However, they have some important differences,
+                    especially when the DOM changes.
+                </p>
+                    
+                </div>
 
-    <h2>NodeList vs HTMLCollection</h2>
-
-    <p>
-        NodeList and HTMLCollection are both used in JavaScript
-        to store collections of nodes or elements from the DOM.
-        However, they have some important differences,
-        especially when the DOM changes.
-    </p>
-
-    <article>
-        <h3>NodeList</h3>
+                    <img src="{{ url_for('static', filename='research-5.png') }}" alt="">
+                </div>
+         <article>
+            <h3>NodeList</h3>
 
         <p>
             A NodeList is a collection of nodes.
