@@ -1003,3 +1003,128 @@ body:has(#reviewPanel.open)::before {
         transition: none;
     }
 }
+
+
+/* Week 8: inline server-validation messages.
+   Only applies to /profile-validated; the Week 4/6 forms stay unchanged. */
+main > form[action*="profile-validated"] .error {
+    display: block;
+    min-width: 0;
+    width: 100%;
+    margin: 0 0 0.35rem;
+    padding: 0.3rem 0.55rem;
+    color: #a52739;
+    background: #fff1f2;
+    border-left: 3px solid #c34c5e;
+    border-radius: 2px;
+    font-size: 0.81rem;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+/* The error is the immediate sibling of its field. */
+main > form[action*="profile-validated"] :is(input, select, textarea) + .error {
+    margin-top: -0.1rem;
+}
+main > form[action*="profile-validated"] > fieldset > fieldset > .error {
+    margin-top: 0.4rem;
+}
+main > form[action*="profile-validated"] > label[for="confirmation"] + .error {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.35rem 0 0.7rem;
+}
+/* Desktop grids previously used fixed row numbers, so reserve a row
+   directly under each control for its optional error message. */
+@media (min-width: 761px) {
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="student_id"] { grid-column: 1; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #student_id { grid-column: 1; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #student_id + .error { grid-column: 1; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="fullname"] { grid-column: 2; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #fullname { grid-column: 2; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #fullname + .error { grid-column: 2; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="email"] { grid-column: 1; grid-row: 5; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #email { grid-column: 1; grid-row: 7; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #email + .error { grid-column: 1; grid-row: 8; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="phone"] { grid-column: 2; grid-row: 5; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #phone { grid-column: 2; grid-row: 7; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #phone + .error { grid-column: 2; grid-row: 8; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="birthdate"] { grid-column: 1; grid-row: 9; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #birthdate { grid-column: 1; grid-row: 10; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #birthdate + .error { grid-column: 1; grid-row: 11; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="portfolio"] { grid-column: 2; grid-row: 9; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #portfolio { grid-column: 2; grid-row: 10; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #portfolio + .error { grid-column: 2; grid-row: 11; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > label[for="gin446"] { grid-column: 1 / -1; grid-row: 12; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #gin446 { grid-column: 1 / -1; grid-row: 13; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(1) > #gin446 + .error { grid-column: 1 / -1; grid-row: 14; align-self: start; }
+    /* The standalone +961 prefix stays above the phone input. */
+    main > form[action*="profile-validated"] > fieldset:first-of-type > span:not(.error) {
+        grid-column: 2;
+        grid-row: 6;
+        font-size: 0.83rem;
+        align-self: end;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > label[for="major"] { grid-column: 1; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #major { grid-column: 1; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #major + .error { grid-column: 1; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > label[for="gpa"] { grid-column: 2; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #gpa { grid-column: 2; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #gpa + .error { grid-column: 2; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > label[for="credits"] { grid-column: 1; grid-row: 5; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #credits { grid-column: 1; grid-row: 6; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #credits + .error { grid-column: 1; grid-row: 7; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > label[for="graduation_month"] { grid-column: 1 / -1; grid-row: 9; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #graduation_month { grid-column: 1 / -1; grid-row: 10; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > #graduation_month + .error { grid-column: 1 / -1; grid-row: 11; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > fieldset:first-of-type {
+        grid-column: 2;
+        grid-row: 5 / 8;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > fieldset:last-of-type {
+        grid-column: 1 / -1;
+        grid-row: 12;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(2) > fieldset > .error {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > fieldset {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > fieldset > .error {
+        grid-column: 1 / -1;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > label[for="language"] { grid-column: 1; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > #language { grid-column: 1; grid-row: 4; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > #language + .error { grid-column: 1; grid-row: 5; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > label[for="software"] { grid-column: 2; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > #software { grid-column: 2; grid-row: 4; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > #software + .error { grid-column: 2; grid-row: 5; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(3) > p {
+        grid-column: 2;
+        grid-row: 6;
+    }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="project_title"] { grid-column: 1; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_title { grid-column: 1; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_title + .error { grid-column: 1; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="project_area"] { grid-column: 2; grid-row: 2; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_area { grid-column: 2; grid-row: 3; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_area + .error { grid-column: 2; grid-row: 4; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="description"] { grid-column: 1 / -1; grid-row: 5; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #description { grid-column: 1 / -1; grid-row: 6; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #description + .error { grid-column: 1 / -1; grid-row: 7; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="team_size"] { grid-column: 1; grid-row: 8; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #team_size { grid-column: 1; grid-row: 9; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #team_size + .error { grid-column: 1; grid-row: 10; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="project_color"] { grid-column: 2; grid-row: 8; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_color { grid-column: 2; grid-row: 9; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #project_color + .error { grid-column: 2; grid-row: 10; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="meeting_date"] { grid-column: 1; grid-row: 11; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #meeting_date { grid-column: 1; grid-row: 12; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #meeting_date + .error { grid-column: 1; grid-row: 13; align-self: start; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > label[for="meeting_time"] { grid-column: 2; grid-row: 11; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #meeting_time { grid-column: 2; grid-row: 12; }
+    main > form[action*="profile-validated"] > fieldset:nth-of-type(4) > #meeting_time + .error { grid-column: 2; grid-row: 13; align-self: start; }
+}
