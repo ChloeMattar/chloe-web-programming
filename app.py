@@ -35,7 +35,7 @@ Example inside profile.html (which extends your base.html):
   <p>Skills: {{ skills | join(', ') }}</p>
   <p>Software: {{ software | join(', ') }}</p>
 """
-#from validators import validate_profile # at the top
+from validators import validate_profile # at the top
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -56,7 +56,7 @@ def home():
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
         {"week": 6, "title": "JavaScript Form Validation", "url": "/profile-form-javascript"},
         {"week": 7, "title": "Live Quiz with Fetch", "url": "/live-quiz"},
-        {"week": 8, "title": "form", "url": "/profile-validated"},
+        {"week": 8, "title": "Server-Side Validation", "url": "/profile-validated"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
