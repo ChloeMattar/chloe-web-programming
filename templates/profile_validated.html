@@ -133,8 +133,7 @@ Reads the exact field `name` values from the profile form; `skills` and
   {% if data.get('form_version') %}
   <p style="margin-top: 2rem; color: #64748b; font-size: 0.85rem">
     Form version {{ data.get('form_version') }} —
-    <a href="{{ url_for('submit_profile') }}">edit and resubmit</a>
-  </p>
+    <a href="{{ url_for('profile_validated') }}">Edit and resubmit</a>  </p>
   {% endif %}
 </article>
 {% endblock %}

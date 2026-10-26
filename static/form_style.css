@@ -1,18 +1,18 @@
 /* Form background; reuse the shared pulse without duplicating keyframes. */
 body:has(main > form) {
-    --scene-blue: 45, 150, 225;
+    --scene-blue: 92, 140, 186;
     --orb-x: 90%;
     --orb-y: 12%;
     --small-x: 12%;
     --small-y: 72%;
     --wave-x: 0%;
     background:
-        radial-gradient(circle at var(--orb-x, 88%) var(--orb-y, 14%), rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 calc(var(--orb-size, 3rem) - 2px), rgba(255, 255, 255, var(--shape-glow)) var(--orb-size, 3rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.4)) calc(var(--orb-size, 3rem) + 3px), transparent calc(var(--orb-size, 3rem) + 1.5rem)),
-        radial-gradient(circle at calc(var(--orb-x, 88%) - 3rem) calc(var(--orb-y, 14%) + 2rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 0 2.5rem, transparent 3.5rem),
-        radial-gradient(circle at var(--small-x, 8%) var(--small-y, 76%), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.75)) 0 2.5rem, transparent 3.5rem),
-        radial-gradient(circle at 100% 58%, rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 3.5rem, transparent 4.75rem),
-        radial-gradient(ellipse 110% 85% at var(--wave-x, 12%) var(--wave-y, 120%), transparent 0 60%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 63% 75%, transparent 79%),
-        radial-gradient(ellipse 100% 90% at 105% 115%, transparent 0 56%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.5)) 60% 72%, transparent 77%),
+        radial-gradient(circle at var(--orb-x, 88%) var(--orb-y, 14%), rgba(var(--scene-blue, 92, 140, 186), var(--shape-glow)) 0 calc(var(--orb-size, 3rem) - 2px), rgba(255, 255, 255, var(--shape-glow)) var(--orb-size, 3rem), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.4)) calc(var(--orb-size, 3rem) + 3px), transparent calc(var(--orb-size, 3rem) + 1.5rem)),
+        radial-gradient(circle at calc(var(--orb-x, 88%) - 3rem) calc(var(--orb-y, 14%) + 2rem), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.65)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at var(--small-x, 8%) var(--small-y, 76%), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.75)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at 100% 58%, rgba(var(--scene-blue, 92, 140, 186), var(--shape-glow)) 0 3.5rem, transparent 4.75rem),
+        radial-gradient(ellipse 110% 85% at var(--wave-x, 12%) var(--wave-y, 120%), transparent 0 60%, rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.65)) 63% 75%, transparent 79%),
+        radial-gradient(ellipse 100% 90% at 105% 115%, transparent 0 56%, rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.5)) 60% 72%, transparent 77%),
         linear-gradient(135deg, var(--scene-base, #eaf3fb), #f7fafc 60%, #edf5fc);
     background-attachment: fixed;
     animation: shape-glow 7s ease-in-out infinite;
@@ -29,7 +29,7 @@ body:has(main > form) main {
     width: min(var(--content-width), calc(100% - 1.5rem));
     margin-top: 0;
     margin-bottom: var(--space-xxl);
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: var(--font-family);
 }
 
 main > h2,
@@ -832,7 +832,7 @@ body:has(#reviewPanel.open)::before {
     grid-column: 1 / -1;
     margin: 0;
     padding: 0.45rem 0.55rem 0.85rem;
-    color: #293f59;
+    color: #17324d;
     border-bottom: 2px solid #a0b8cc;
     font-size: clamp(1.45rem, 5vw, 1.9rem);
     font-weight: 800;
@@ -880,7 +880,7 @@ body:has(#reviewPanel.open)::before {
     margin: -0.75rem -0.85rem 0.7rem;
     padding: 0.8rem 0.85rem;
     color: #ffffff;
-    background: linear-gradient(90deg, #446785, #7697b2);
+    background: linear-gradient(90deg, #3d6d99, #638fb3);
     border-radius: 4px 4px 0 0;
     font-size: 0.88rem;
     font-weight: 800;
@@ -926,7 +926,7 @@ body:has(#reviewPanel.open)::before {
     min-width: 0;
     margin: 0;
     padding: 0.8rem 0.6rem;
-    border: 2px solid #293f59;
+    border: 2px solid #17324d;
     border-radius: 5px;
     font: inherit;
     font-size: 0.88rem;
@@ -937,13 +937,13 @@ body:has(#reviewPanel.open)::before {
 }
 
 #editButton {
-    color: #293f59;
+    color: #17324d;
     background: var(--color-blue);
 }
 
 #confirmButton {
     color: #ffffff;
-    background: #293f59;
+    background: #17324d;
 }
 
 #editButton:hover,
@@ -953,11 +953,11 @@ body:has(#reviewPanel.open)::before {
 
 #confirmButton:hover,
 #confirmButton:focus-visible {
-    background: #446785;
+    background: #3d6d99;
 }
 
 #reviewPanel > button:focus-visible {
-    outline: 3px solid #7d91a6;
+    outline: 3px solid #2f6a9c;
     outline-offset: 3px;
 }
 

@@ -1,1 +1,122 @@
-<h1>Still under construction !</h1>
+{% extends "nav-base.html" %}
+
+{% block title %}About Me | Chloe Mattar{% endblock %}
+
+{% block head %}
+<!-- Styles used only by this page -->
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="about">
+
+    <!-- HERO: navy "night sky" band with my photo in orbit -->
+    <section class="about-hero">
+        <!-- Decorative sparkles (aria-hidden: screen readers skip them) -->
+        <svg class="sparkle sparkle-1" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1 13.6 10.4 23 12 13.6 13.6 12 23 10.4 13.6 1 12 10.4 10.4Z"/></svg>
+        <svg class="sparkle sparkle-2" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1 13.6 10.4 23 12 13.6 13.6 12 23 10.4 13.6 1 12 10.4 10.4Z"/></svg>
+        <svg class="sparkle sparkle-3" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1 13.6 10.4 23 12 13.6 13.6 12 23 10.4 13.6 1 12 10.4 10.4Z"/></svg>
+        <svg class="sparkle sparkle-4" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1 13.6 10.4 23 12 13.6 13.6 12 23 10.4 13.6 1 12 10.4 10.4Z"/></svg>
+
+        <div class="about-hero-text">
+            <p class="code-tag">&lt;about-me /&gt;</p>
+            <h1>Hi, I’m Chloe.</h1>
+            <p class="about-hero-role">Computer Engineering Student at USEK</p>
+            <p class="about-hero-tagline">Learning, building, and growing through code, one weekly project at a time.</p>
+            <div class="about-hero-buttons">
+                <a class="about-btn about-btn-primary" href="{{ url_for('home') }}#weekly-work">Explore my weekly work</a>
+                <a class="about-btn about-btn-outline" href="#contact">Get in touch</a>
+            </div>
+        </div>
+
+        <!-- Photo with orbit rings, "planets" and a floating code chip -->
+        <div class="about-photo-orbit">
+            <span class="orbit orbit-tilted" aria-hidden="true"></span>
+            <span class="orbit orbit-dashed" aria-hidden="true"></span>
+            <img class="about-photo"
+                 src="{{ url_for('static', filename='chloe.png') }}"
+                 alt="Portrait of Chloe Mattar">
+            <span class="planet planet-big" aria-hidden="true"></span>
+            <span class="planet planet-small" aria-hidden="true"></span>
+            <span class="code-chip" aria-hidden="true">&lt;/&gt;</span>
+        </div>
+    </section>
+
+    <!-- Three cards that overlap the bottom of the hero -->
+    <div class="about-cards">
+        <section class="about-card">
+            <span class="about-icon icon-navy" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            </span>
+            <h2>Who I am</h2>
+            <p>A Computer Engineering student at the Holy Spirit University of Kaslik (USEK) who enjoys structured problem-solving and turning ideas into thoughtful projects.</p>
+        </section>
+
+        <section class="about-card">
+            <span class="about-icon icon-dusty" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>
+            </span>
+            <h2>How I work</h2>
+            <p>I value precision, clear organization, and continuous improvement, and I like connecting what I learn in class to practical problems.</p>
+        </section>
+
+        <section class="about-card">
+            <span class="about-icon icon-light" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M9 9l-2 2 2 2"/><path d="M15 9l2 2-2 2"/></svg>
+            </span>
+            <h2>What I’ve built</h2>
+            <p>Besides this site, I modeled a Spotify-inspired music streaming system using UML, planning its classes and how they connect.</p>
+        </section>
+    </div>
+
+    <!-- Journey timeline + toolkit written as code -->
+    <div class="about-columns">
+
+        <section class="about-journey">
+            <h2>My web journey</h2>
+            <p>This portfolio grows with my weekly work in GIN446 - Web Programming.</p>
+            <ol class="timeline">
+                <li><span class="timeline-week">Week 2</span>History of the Internet and the Web</li>
+                <li><span class="timeline-week">Week 3</span>Web Programming Research</li>
+                <li><span class="timeline-week">Week 4</span>Engineering Student Profile form</li>
+                <li><span class="timeline-week">Week 5</span>JavaScript Quiz</li>
+                <li><span class="timeline-week">Week 6</span>JavaScript Form Validation</li>
+                <li><span class="timeline-week">Week 7</span>Live Quiz with Fetch</li>
+                <li class="timeline-latest"><span class="timeline-week">Week 8 · latest</span>Server-Side Validation</li>
+            </ol>
+        </section>
+
+        <section class="about-toolkit">
+            <h2>My toolkit, in code</h2>
+            <div class="code-window">
+                <div class="code-window-bar">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span class="code-window-name">chloe.js</span>
+                </div>
+<pre><code><span class="kw">const</span> chloe = {
+  studying:    <span class="str">"Computer Engineering"</span>,
+  university:  <span class="str">"USEK"</span>,
+  learning:    [<span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"JavaScript"</span>, <span class="str">"Flask"</span>],
+  alreadyKnow: [<span class="str">"Python"</span>, <span class="str">"Java"</span>, <span class="str">"C++"</span>, <span class="str">"SQL"</span>, <span class="str">"UML"</span>],
+  speaks:      [<span class="str">"Arabic"</span>, <span class="str">"English"</span>, <span class="str">"French"</span>],
+  motto:       <span class="str">"Small steps build big things."</span>
+};</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact -->
+    <section class="about-contact" id="contact">
+        <h2>Let’s connect</h2>
+        <p>Questions about my projects, or want to work together? I’d be happy to hear from you.</p>
+        <a class="about-email" href="mailto:chloe.mattar.4@gmail.com">chloe.mattar.4@gmail.com</a>
+        <div class="about-contact-links">
+            <a class="about-pill" href="tel:+96176841413">+961 76 84 14 13</a>
+            <a class="about-pill about-pill-dark" href="https://github.com/ChloeMattar" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

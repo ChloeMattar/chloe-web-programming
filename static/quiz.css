@@ -1,12 +1,12 @@
 /* Background stays local; shape-glow is shared by the main stylesheet. */
 body:has(#quizPanel) {
     background:
-        radial-gradient(circle at var(--orb-x, 88%) var(--orb-y, 14%), rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 calc(var(--orb-size, 3rem) - 2px), rgba(255, 255, 255, var(--shape-glow)) var(--orb-size, 3rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.4)) calc(var(--orb-size, 3rem) + 3px), transparent calc(var(--orb-size, 3rem) + 1.5rem)),
-        radial-gradient(circle at calc(var(--orb-x, 88%) - 3rem) calc(var(--orb-y, 14%) + 2rem), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 0 2.5rem, transparent 3.5rem),
-        radial-gradient(circle at var(--small-x, 8%) var(--small-y, 76%), rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.75)) 0 2.5rem, transparent 3.5rem),
-        radial-gradient(circle at 100% 58%, rgba(var(--scene-blue, 65, 145, 235), var(--shape-glow)) 0 3.5rem, transparent 4.75rem),
-        radial-gradient(ellipse 110% 85% at var(--wave-x, 12%) var(--wave-y, 120%), transparent 0 60%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.65)) 63% 75%, transparent 79%),
-        radial-gradient(ellipse 100% 90% at 105% 115%, transparent 0 56%, rgba(var(--scene-blue, 65, 145, 235), calc(var(--shape-glow) * 0.5)) 60% 72%, transparent 77%),
+        radial-gradient(circle at var(--orb-x, 88%) var(--orb-y, 14%), rgba(var(--scene-blue, 92, 140, 186), var(--shape-glow)) 0 calc(var(--orb-size, 3rem) - 2px), rgba(255, 255, 255, var(--shape-glow)) var(--orb-size, 3rem), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.4)) calc(var(--orb-size, 3rem) + 3px), transparent calc(var(--orb-size, 3rem) + 1.5rem)),
+        radial-gradient(circle at calc(var(--orb-x, 88%) - 3rem) calc(var(--orb-y, 14%) + 2rem), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.65)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at var(--small-x, 8%) var(--small-y, 76%), rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.75)) 0 2.5rem, transparent 3.5rem),
+        radial-gradient(circle at 100% 58%, rgba(var(--scene-blue, 92, 140, 186), var(--shape-glow)) 0 3.5rem, transparent 4.75rem),
+        radial-gradient(ellipse 110% 85% at var(--wave-x, 12%) var(--wave-y, 120%), transparent 0 60%, rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.65)) 63% 75%, transparent 79%),
+        radial-gradient(ellipse 100% 90% at 105% 115%, transparent 0 56%, rgba(var(--scene-blue, 92, 140, 186), calc(var(--shape-glow) * 0.5)) 60% 72%, transparent 77%),
         linear-gradient(135deg, var(--scene-base, #eaf3fb), #f7fafc 60%, #edf5fc);
     background-attachment: fixed;
     animation: shape-glow 7s ease-in-out infinite;
@@ -82,25 +82,25 @@ body:has(#quizPanel) > header h1::after {
 #quizPanel {
     box-sizing: border-box;
     padding: 1.1rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(225, 239, 255, 0.48));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(231, 240, 246, 0.6));
     border-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 16px 36px rgba(65, 112, 170, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 36px rgba(23, 50, 77, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 #quizPanel:hover {
     border-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 18px 40px rgba(65, 112, 170, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    box-shadow: 0 18px 40px rgba(23, 50, 77, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 #progress {
     width: fit-content;
     margin: 0 0 0.85rem;
     padding: 0.3rem 0.65rem;
-    color: #2055b5;
-    background: rgba(225, 239, 255, 0.85);
+    color: #2f6a9c;
+    background: rgba(231, 240, 246, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(56, 109, 184, 0.12);
+    box-shadow: 0 3px 10px rgba(23, 50, 77, 0.12);
     font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.4;
@@ -137,9 +137,9 @@ body:has(#quizPanel) > header h1::after {
     padding: 0.7rem 0.9rem;
     color: var(--color-text);
     background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(139, 180, 229, 0.3);
+    border: 1px solid rgba(99, 143, 179, 0.3);
     border-radius: 6px;
-    box-shadow: 0 2px 7px rgba(56, 109, 184, 0.05);
+    box-shadow: 0 2px 7px rgba(23, 50, 77, 0.05);
     cursor: pointer;
     line-height: 1.55;
     -webkit-backdrop-filter: blur(10px);
@@ -148,17 +148,17 @@ body:has(#quizPanel) > header h1::after {
 }
 
 .choice:hover {
-    background: rgba(237, 246, 255, 0.95);
-    border-color: rgba(66, 127, 213, 0.55);
+    background: rgba(231, 240, 246, 0.95);
+    border-color: rgba(99, 143, 179, 0.6);
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(56, 109, 184, 0.08);
+    box-shadow: 0 4px 10px rgba(23, 50, 77, 0.08);
 }
 
 .choice:has(input:checked) {
     color: var(--color-primary-dark);
-    background: linear-gradient(90deg, rgba(192, 218, 255, 0.72), rgba(225, 239, 255, 0.9));
-    border-color: #427fd5;
-    box-shadow: 0 3px 9px rgba(56, 109, 184, 0.1);
+    background: linear-gradient(90deg, rgba(203, 220, 232, 0.85), rgba(231, 240, 246, 0.95));
+    border-color: #638fb3;
+    box-shadow: 0 3px 9px rgba(23, 50, 77, 0.1);
 }
 
 .choice:has(input:focus-visible) {
@@ -171,7 +171,7 @@ body:has(#quizPanel) > header h1::after {
     width: 1.08rem;
     height: 1.08rem;
     margin: 0.22rem 0 0;
-    accent-color: #245fc4;
+    accent-color: #17324d;
     cursor: pointer;
 }
 
@@ -254,40 +254,40 @@ body:has(#quizPanel) button.submit:hover:not(:disabled) {
 
 /* Navigation emphasis follows the existing button IDs and disabled state. */
 #quizPanel :is(#firstBtn, #previousBtn):not(:disabled) {
-    color: #284f79;
-    background: linear-gradient(180deg, #edf6ff, #e1efff);
-    border-color: #acc7e7;
-    box-shadow: 0 3px 8px rgba(56, 109, 184, 0.08);
+    color: #17324d;
+    background: linear-gradient(180deg, #f4f7fa, #e7f0f6);
+    border-color: #cbdce8;
+    box-shadow: 0 3px 8px rgba(23, 50, 77, 0.08);
 }
 
 #quizPanel :is(#firstBtn, #previousBtn):hover:not(:disabled) {
-    background: linear-gradient(180deg, #e1efff, #cbdff7);
-    border-color: #749dcc;
+    background: linear-gradient(180deg, #e7f0f6, #dceaf4);
+    border-color: #638fb3;
 }
 
 #quizPanel #nextBtn:not(:disabled) {
-    background: linear-gradient(180deg, #2876ed, #1452bb);
-    border-color: #245fc4;
+    background: linear-gradient(180deg, #638fb3, #49779d);
+    border-color: #49779d;
     box-shadow: 0 5px 12px rgba(36, 95, 196, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 #quizPanel #nextBtn:hover:not(:disabled) {
-    background: linear-gradient(180deg, #2068da, #10469f);
+    background: linear-gradient(180deg, #49779d, #3d6d99);
 }
 
 #quizPanel #lastBtn:not(:disabled) {
-    background: linear-gradient(180deg, #284f79, var(--color-primary-dark));
+    background: linear-gradient(180deg, #244866, var(--color-primary-dark));
     border-color: var(--color-primary-dark);
 }
 
 #quizPanel #lastBtn:hover:not(:disabled) {
-    background: linear-gradient(180deg, #345f8c, #244866);
+    background: linear-gradient(180deg, #355a78, #244866);
 }
 
 #quizPanel .navigation button:disabled {
     color: #61758d;
-    background: rgba(207, 222, 240, 0.65);
-    border-color: rgba(132, 162, 201, 0.3);
+    background: rgba(214, 227, 236, 0.65);
+    border-color: rgba(99, 143, 179, 0.25);
     box-shadow: none;
 }
 
@@ -296,15 +296,15 @@ body:has(#quizPanel) button.submit:hover:not(:disabled) {
     display: none;
     box-sizing: border-box;
     min-width: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(225, 239, 255, 0.58));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(231, 240, 246, 0.65));
     border-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 16px 36px rgba(65, 112, 170, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    box-shadow: 0 16px 36px rgba(23, 50, 77, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 #resultsPanel:hover {
     transform: none;
     border-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 16px 36px rgba(65, 112, 170, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    box-shadow: 0 16px 36px rgba(23, 50, 77, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 #resultsPanel > h2 {
@@ -327,11 +327,11 @@ body:has(#quizPanel) button.submit:hover:not(:disabled) {
     width: min(160px, 65%);
     height: 2px;
     margin-top: 0.55rem;
-    background: linear-gradient(90deg, #427fd5, rgba(144, 189, 245, 0.08));
+    background: linear-gradient(90deg, #638fb3, rgba(99, 143, 179, 0.08));
 }
 
 body:has(#resultsPanel) #resultsPanel > h3::after {
-    background: linear-gradient(90deg, #427fd5 0%, rgba(66, 127, 213, 0.5) 50%, rgba(66, 127, 213, 0.12) 85%, transparent 100%);
+    background: linear-gradient(90deg, #638fb3 0%, rgba(99, 143, 179, 0.5) 50%, rgba(99, 143, 179, 0.12) 85%, transparent 100%);
 }
 
 #scoreText,
@@ -341,8 +341,8 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
     padding: 0.95rem 1rem;
     color: var(--color-primary-dark);
     background: rgba(255, 255, 255, 0.78);
-    border-right: 1px solid rgba(139, 180, 229, 0.25);
-    border-left: 1px solid rgba(139, 180, 229, 0.25);
+    border-right: 1px solid rgba(99, 143, 179, 0.25);
+    border-left: 1px solid rgba(99, 143, 179, 0.25);
     overflow-wrap: anywhere;
     line-height: 1.45;
     -webkit-backdrop-filter: blur(9px);
@@ -350,7 +350,7 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
 }
 
 #scoreText {
-    border-top: 1px solid rgba(139, 180, 229, 0.25);
+    border-top: 1px solid rgba(99, 143, 179, 0.25);
     border-radius: 6px 6px 0 0;
     font-weight: 700;
 }
@@ -364,7 +364,7 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
     border-top: 1px solid rgba(99, 143, 179, 0.12);
     border-bottom: 1px solid rgba(99, 143, 179, 0.2);
     border-radius: 0 0 6px 6px;
-    background: rgba(194, 218, 245, 0.5);
+    background: rgba(203, 220, 232, 0.6);
     font-weight: 800;
 }
 
@@ -389,12 +389,12 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
     word-break: normal;
     color: var(--color-text);
     background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(139, 180, 229, 0.25);
+    border: 1px solid rgba(99, 143, 179, 0.25);
     border-radius: 6px;
     font-family: var(--font-family);
     font-size: 1rem;
     line-height: 1.85;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 0 22px rgba(99, 155, 221, 0.22), 0 8px 24px rgba(65, 112, 170, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 0 22px rgba(99, 143, 179, 0.22), 0 8px 24px rgba(23, 50, 77, 0.14);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -408,7 +408,7 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
     align-items: center;
     max-width: 100%;
     padding: 0.72rem 0.95rem;
-    color: #0b2238;
+    color: #17324d;
     background: var(--color-primary, var(--color-primary));
     border: 1px solid var(--color-nav-hover);
     border-radius: 5px;
@@ -424,8 +424,8 @@ body:has(#resultsPanel) #resultsPanel > h3::after {
 #resultsPanel > p:last-child a:hover,
 #resultsPanel > p:last-child a:focus-visible {
     background: #83aed0;
-    border-color: #b8dcf6;
-    box-shadow: 0 0 16px rgba(144, 201, 245, 0.6), 0 0 28px rgba(144, 201, 245, 0.28), 0 6px 16px rgba(23, 50, 77, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-color: #cbdce8;
+    box-shadow: 0 0 16px rgba(158, 195, 224, 0.6), 0 0 28px rgba(158, 195, 224, 0.28), 0 6px 16px rgba(23, 50, 77, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #resultsPanel > p:last-child a:hover {

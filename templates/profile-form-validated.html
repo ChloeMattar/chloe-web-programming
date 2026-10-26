@@ -2,7 +2,10 @@
 
 {% block title %}Engineering Student Profile{% endblock %}
 {% block header %}
-    <h1>Web Programming Portfolio</h1>
+    <h1>Engineering Student Profile</h1>
+    <p>Complete this form to provide information about your
+    academic background, technical skills, internship
+    experience, and Final Year Project preferences.</p>
 {% endblock %}
 {% block head %}
  <link rel="stylesheet"
@@ -15,11 +18,6 @@
 {% endmacro %}
 
 {% block content%}
-  <h2>Engineering Student Profile</h2>
-
-    <p>Complete this form to provide information about your
-    academic background, technical skills, internship
-    experience, and Final Year Project preferences.</p>
     <form method="post" 
         action="{{ url_for('profile_validated') }}"
         novalidate>

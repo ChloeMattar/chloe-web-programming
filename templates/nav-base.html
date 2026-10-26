@@ -4,6 +4,7 @@
 
 <nav>
     <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('about') }}">About Me</a>
     <a href="{{ url_for('internet_history') }}">History of the Internet</a>
     <a href="{{ url_for('internet_history_ai') }}">History of the Internet (AI)</a>
     <a href="{{ url_for('web_history') }}">History of the World Wide Web</a>
@@ -12,6 +13,8 @@
     <a href="{{ url_for('submit_profile') }}">Student Profile</a>
     <a href="{{ url_for('quiz') }}">JavaScript Quiz</a>
     <a href="{{ url_for('profile_form_javascript') }}">JavaScript Form Validation</a>
+    <a href="{{ url_for('quiz.quiz_page') }}">Live Quiz with Fetch</a>
+    <a href="{{ url_for('profile_validated') }}">Server-Side Form Validation</a>
 </nav>
 
 {% endblock %}

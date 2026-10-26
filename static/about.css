@@ -1,0 +1,538 @@
+/* ============================================================
+   About Me page (loaded only by about.html, after style.css)
+   Uses the colour variables from style.css (:root).
+   Every rule starts with .about so nothing leaks onto other pages.
+   ============================================================ */
+
+/* The page title lives in the hero, so the empty site header is collapsed.
+   On desktop the header only holds the logo, which is fixed in the sidebar. */
+body:has(.about-hero) > header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    body:has(.about-hero) > header {
+        display: none;
+    }
+}
+
+.about {
+    --about-light: #9ec3e0;   /* light dusty blue for text on navy */
+    --about-pale: #cfe4f7;    /* sparkles and code strings */
+    --about-deep: #102538;    /* darkest navy for depth */
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    margin-inline: auto;
+}
+
+/* Reset the site's general section style (border, padding, hover lift)
+   so each part of this page can have its own look. */
+.about section,
+.about section:hover {
+    margin: 0;
+    transform: none;
+}
+
+/* ------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------ */
+.about .about-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1.25rem 5rem;
+    border: none;
+    border-radius: 20px;
+    background: radial-gradient(circle at 82% 40%, #2c5378 0, #1d3d5c 30%, var(--color-primary-dark) 60%, var(--about-deep) 100%);
+    box-shadow: 0 18px 44px rgba(23, 50, 77, 0.22);
+}
+
+.about .about-hero:hover {
+    box-shadow: 0 18px 44px rgba(23, 50, 77, 0.22);
+}
+
+.sparkle {
+    position: absolute;
+    fill: var(--about-pale);
+    pointer-events: none;
+}
+
+.sparkle-1 { width: 26px; top: 2.5rem; left: 46%; }
+.sparkle-2 { width: 14px; top: 7.5rem; left: 38%; fill: #8fb6d6; }
+.sparkle-3 { width: 18px; bottom: 4.5rem; right: 6%; }
+.sparkle-4 { width: 12px; top: 2rem; right: 9%; fill: #8fb6d6; }
+
+.about-hero-text {
+    position: relative;
+    flex: 1 1 380px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about .code-tag {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba(207, 228, 247, 0.3);
+    border-radius: 999px;
+    background: rgba(207, 228, 247, 0.12);
+    color: var(--about-pale);
+    font: 700 0.8rem/1.4 Consolas, "Courier New", monospace;
+}
+
+.about .about-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.about .about-hero-role {
+    margin: 0;
+    color: var(--about-light);
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.about .about-hero-tagline {
+    max-width: 32rem;
+    margin: 0.25rem 0 0;
+    color: #dbe8f3;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+/* Buttons (pill shaped) */
+.about .about-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 1.2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.about .about-btn-primary {
+    background: #ffffff;
+    color: var(--color-primary-dark);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.about .about-btn-outline {
+    border: 1.5px solid rgba(207, 228, 247, 0.55);
+    color: #ffffff;
+}
+
+.about .about-btn:hover {
+    transform: translateY(-2px);
+}
+
+.about .about-btn-primary:hover {
+    background: var(--color-blue);
+    color: var(--color-primary-dark);
+}
+
+.about .about-btn-outline:hover {
+    background: rgba(207, 228, 247, 0.12);
+    color: #ffffff;
+}
+
+.about .about-btn:focus-visible {
+    outline: 3px solid var(--about-pale);
+    outline-offset: 3px;
+}
+
+/* Photo with orbits */
+.about-photo-orbit {
+    position: relative;
+    flex: 0 0 auto;
+    width: min(200px, 100%);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-tilted {
+    left: -12%;
+    right: -12%;
+    top: 30%;
+    bottom: 30%;
+    border: 1.5px solid rgba(158, 195, 224, 0.55);
+    transform: rotate(-16deg);
+}
+
+.orbit-dashed {
+    inset: 2%;
+    border: 1px dashed rgba(207, 228, 247, 0.35);
+}
+
+.about .about-photo {
+    position: relative;
+    width: 76%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    border-radius: 50%;
+    background: var(--color-blue);
+    box-shadow: 0 0 0 10px rgba(99, 143, 179, 0.25), 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.planet-big {
+    top: 26%;
+    right: -5%;
+    width: 22px;
+    height: 22px;
+    background: var(--about-light);
+    box-shadow: 0 0 18px rgba(158, 195, 224, 0.8);
+}
+
+.planet-small {
+    bottom: 29%;
+    left: -7%;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+}
+
+.code-chip {
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+    padding: 0.4rem 0.75rem;
+    border-radius: 10px;
+    background: #ffffff;
+    color: var(--color-primary-dark);
+    font: 800 0.95rem/1 Consolas, "Courier New", monospace;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    transform: rotate(6deg);
+}
+
+/* ------------------------------------------------------------
+   Cards overlapping the hero
+   ------------------------------------------------------------ */
+.about-cards {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: -3.25rem 0.75rem 0;
+}
+
+.about .about-card,
+.about .about-card:hover {
+    flex: 1 1 250px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(23, 50, 77, 0.14);
+}
+
+.about-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+}
+
+.about-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-navy { background: var(--color-primary-dark); }
+.icon-dusty { background: var(--color-primary); }
+.icon-light { background: var(--about-light); }
+.icon-light svg { stroke: var(--color-primary-dark); }
+
+/* Card titles: no underline bar (the site adds one to every h2) */
+.about .about-card h2 {
+    width: auto;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.about .about-card h2::after {
+    display: none;
+}
+
+.about .about-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   Journey timeline and code window
+   ------------------------------------------------------------ */
+.about-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2.5rem 1.75rem;
+    margin-top: 2.75rem;
+}
+
+.about .about-journey,
+.about .about-toolkit {
+    flex: 1 1 380px;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* These two h2s keep the site's short underline bar */
+.about .about-columns h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin: 1rem 0 0;
+    padding: 0 0 0 1.6rem;
+    list-style: none;
+    border-left: 2px solid var(--color-border);
+}
+
+.timeline li {
+    position: relative;
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* The dot on the line */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    top: 0.35rem;
+    left: calc(-1.6rem - 7px);
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.timeline .timeline-latest::before {
+    left: calc(-1.6rem - 9px);
+    width: 16px;
+    height: 16px;
+    top: 0.25rem;
+    border: none;
+    background: var(--color-primary-dark);
+    box-shadow: 0 0 0 5px rgba(99, 143, 179, 0.25);
+}
+
+.timeline-week {
+    display: block;
+    color: #3d6d99;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.code-window {
+    margin-top: 1.25rem;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--color-primary-dark);
+    box-shadow: 0 18px 44px rgba(23, 50, 77, 0.22);
+    transform: rotate(-1deg);
+}
+
+.code-window-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--about-deep);
+}
+
+.code-window-bar .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--about-light);
+}
+
+.code-window-bar .dot:nth-child(2) { background: var(--color-primary); }
+.code-window-bar .dot:nth-child(3) { background: #3d6d99; }
+
+.code-window-name {
+    margin-left: 0.6rem;
+    color: var(--about-light);
+    font: 0.82rem Consolas, "Courier New", monospace;
+}
+
+.about .code-window pre {
+    margin: 0;
+    padding: 1.1rem 1.25rem 1.25rem;
+    overflow-x: auto;
+    color: var(--color-blue);
+    font: 0.82rem/1.75 Consolas, "Courier New", monospace;
+}
+
+.code-window .kw { color: var(--about-light); }
+.code-window .str { color: var(--about-pale); }
+
+/* ------------------------------------------------------------
+   Contact
+   ------------------------------------------------------------ */
+.about .about-contact,
+.about .about-contact:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 3rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    background: var(--color-blue);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    box-shadow: none;
+}
+
+.about .about-contact h2 {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.about .about-contact h2::after {
+    display: none;
+}
+
+.about .about-contact p {
+    max-width: 34rem;
+    margin: 0;
+}
+
+.about .about-email {
+    color: var(--color-primary-dark);
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    font-weight: 800;
+    overflow-wrap: anywhere;
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.about-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.about .about-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.about .about-pill-dark {
+    border-color: var(--color-primary-dark);
+    background: var(--color-primary-dark);
+    color: #ffffff;
+}
+
+.about .about-pill:hover {
+    transform: translateY(-2px);
+    background: var(--color-blue-hover);
+    color: var(--color-primary-dark);
+}
+
+.about .about-pill-dark:hover {
+    background: var(--color-nav-hover);
+    color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   Larger screens
+   ------------------------------------------------------------ */
+@media (min-width: 761px) {
+    .about .about-hero {
+        padding: 2.75rem 2.5rem 5.5rem;
+    }
+
+    .about-photo-orbit {
+        width: 220px;
+    }
+
+    .about-cards {
+        margin: -3.5rem 1.5rem 0;
+    }
+}
+
+/* Respect "reduce motion": no lifting on hover */
+@media (prefers-reduced-motion: reduce) {
+    .about .about-btn:hover,
+    .about .about-pill:hover {
+        transform: none;
+    }
+}
